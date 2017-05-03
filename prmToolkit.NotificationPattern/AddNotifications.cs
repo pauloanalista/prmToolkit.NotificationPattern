@@ -54,7 +54,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Property</param>
         /// <param name="message">Error Message (Optional)</param>
         /// <returns></returns>
-        public AddNotifications<T> IfNotNull(Expression<Func<T, string>> selector, string message = "")
+        public AddNotifications<T> IfNotNullOrEmpty(Expression<Func<T, string>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
             var name = ((MemberExpression)selector.Body).Member.Name;
@@ -1011,5 +1011,243 @@ namespace prmToolkit.NotificationPattern
 
             return this;
         }
+
+        /// <summary>
+        /// Dada um int, adicione uma notificação se for igual a zero
+        /// </summary>
+        /// <param name="selector">Property</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Error Message (Optional)</param>
+        /// <returns></returns>
+        public AddNotifications<T> IfEqualsZero(Expression<Func<T, int>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val == 0)
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? $"Field {name} should be not equals to zero." : message);
+
+            return this;
+        }
+
+        #region IfNull
+        /// <summary>
+        /// Dada um objeto, adicione uma notificação se for igual null
+        /// </summary>
+        /// <param name="selector">Property</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Error Message (Optional)</param>
+        /// <returns></returns>
+        public AddNotifications<T> IfNull(Expression<Func<T, int?>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val == null)
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? $"Field {name} should be not equals to null." : message);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Dada um objeto, adicione uma notificação se for igual null
+        /// </summary>
+        /// <param name="selector">Property</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Error Message (Optional)</param>
+        /// <returns></returns>
+        public AddNotifications<T> IfNull(Expression<Func<T, double?>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val == null)
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? $"Field {name} should be not equals to null." : message);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Dada um objeto, adicione uma notificação se for igual null
+        /// </summary>
+        /// <param name="selector">Property</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Error Message (Optional)</param>
+        /// <returns></returns>
+        public AddNotifications<T> IfNull(Expression<Func<T, float?>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val == null)
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? $"Field {name} should be not equals to null." : message);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Dada um objeto, adicione uma notificação se for igual null
+        /// </summary>
+        /// <param name="selector">Property</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Error Message (Optional)</param>
+        /// <returns></returns>
+        public AddNotifications<T> IfNull(Expression<Func<T, decimal?>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val == null)
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? $"Field {name} should be not equals to null." : message);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Dada um objeto, adicione uma notificação se for igual null
+        /// </summary>
+        /// <param name="selector">Property</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Error Message (Optional)</param>
+        /// <returns></returns>
+        public AddNotifications<T> IfNull(Expression<Func<T, DateTime>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val == null)
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? $"Field {name} should be not equals to null." : message);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Dada um objeto, adicione uma notificação se for igual null
+        /// </summary>
+        /// <param name="selector">Property</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Error Message (Optional)</param>
+        /// <returns></returns>
+        public AddNotifications<T> IfNull(Expression<Func<T, DateTime?>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val == null)
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? $"Field {name} should be not equals to null." : message);
+
+            return this;
+        }
+        #endregion
+
+        #region IfNotNull
+        /// <summary>
+        /// Dada um objeto, adicione uma notificação se não for igual null
+        /// </summary>
+        /// <param name="selector">Property</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Error Message (Optional)</param>
+        /// <returns></returns>
+        public AddNotifications<T> IfNotNull(Expression<Func<T, int?>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val != null)
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? $"Field {name} should be equals to null." : message);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Dada um objeto, adicione uma notificação se não for igual null
+        /// </summary>
+        /// <param name="selector">Property</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Error Message (Optional)</param>
+        /// <returns></returns>
+        public AddNotifications<T> IfNotNull(Expression<Func<T, float?>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val != null)
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? $"Field {name} should be equals to null." : message);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Dada um objeto, adicione uma notificação se não for igual null
+        /// </summary>
+        /// <param name="selector">Property</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Error Message (Optional)</param>
+        /// <returns></returns>
+        public AddNotifications<T> IfNotNull(Expression<Func<T, double?>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val != null)
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? $"Field {name} should be equals to null." : message);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Dada um objeto, adicione uma notificação se não for igual null
+        /// </summary>
+        /// <param name="selector">Property</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Error Message (Optional)</param>
+        /// <returns></returns>
+        public AddNotifications<T> IfNotNull(Expression<Func<T, decimal?>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val != null)
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? $"Field {name} should be equals to null." : message);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Dada um objeto, adicione uma notificação se não for igual null
+        /// </summary>
+        /// <param name="selector">Property</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Error Message (Optional)</param>
+        /// <returns></returns>
+        public AddNotifications<T> IfNotNull(Expression<Func<T, DateTime>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val != null)
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? $"Field {name} should be equals to null." : message);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Dada um objeto, adicione uma notificação se não for igual null
+        /// </summary>
+        /// <param name="selector">Property</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Error Message (Optional)</param>
+        /// <returns></returns>
+        public AddNotifications<T> IfNotNull(Expression<Func<T, DateTime?>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val != null)
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? $"Field {name} should be equals to null." : message);
+
+            return this;
+        }
+        #endregion
     }
 }

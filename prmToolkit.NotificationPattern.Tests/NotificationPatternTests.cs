@@ -9,29 +9,33 @@ namespace prmToolkit.NotificationPattern.Tests
     {
         private readonly Customer _customer = new Customer();
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfNullOrEmpty()
         {
             new AddNotifications<Customer>(_customer).IfNullOrEmpty(x => x.Name);
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfNullOrWhiteSpace()
         {
             new AddNotifications<Customer>(_customer).IfNullOrWhiteSpace(x => x.Name);
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
-        public void IfNotNull()
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
+        public void IfNotNullOrEmpty()
         {
             _customer.Name = "Paulo";
-            new AddNotifications<Customer>(_customer).IfNotNull(x => x.Name);
+            new AddNotifications<Customer>(_customer).IfNotNullOrEmpty(x => x.Name);
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfLowerThen()
         {
             _customer.Name = "A";
@@ -41,7 +45,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfGreaterThan()
         {
             _customer.Name = "Paulo Rogério";
@@ -49,7 +54,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfLengthNoEqual()
         {
             _customer.Name = "abc";
@@ -59,7 +65,8 @@ namespace prmToolkit.NotificationPattern.Tests
         }
 
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfNullOrEmptyOrInvalidLength()
         {
             Customer customerNameEmpty = new Customer();
@@ -78,7 +85,8 @@ namespace prmToolkit.NotificationPattern.Tests
         }
 
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfNotEmail()
         {
             _customer.Name = "This is not an e-mail";
@@ -86,7 +94,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfNotUrl()
         {
             _customer.Name = "This is not an URL";
@@ -94,7 +103,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfGreaterOrEqualsThan()
         {
             Customer customer10 = new Customer();
@@ -109,7 +119,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, customer11.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfGreaterOrEqualsThan_DateTime()
         {
             Customer customer10 = new Customer();
@@ -127,7 +138,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, customer11.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfLowerOrEqualsThan()
         {
             Customer customer10 = new Customer();
@@ -142,7 +154,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, customer09.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfLowerOrEqualsThan_DateTime()
         {
             Customer customer10 = new Customer();
@@ -160,7 +173,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, customer11.IsValid());
         }
         
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfNotRange()
         {
             _customer.Age = 10;
@@ -170,7 +184,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfNotRange_Date()
         {
             DateTime now = DateTime.Now;
@@ -181,7 +196,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfRange()
         {
             _customer.Age = 10;
@@ -191,7 +207,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfRange_Date()
         {
             DateTime now = DateTime.Now;
@@ -202,7 +219,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfNotContains()
         {
             _customer.Name = "Paulo";
@@ -211,7 +229,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfContains()
         {
             _customer.Name = "Paulo";
@@ -219,7 +238,8 @@ namespace prmToolkit.NotificationPattern.Tests
 
             Assert.AreEqual(false, _customer.IsValid());
         }
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfNotAreEquals()
         {
             _customer.Name = "Paulo";
@@ -228,7 +248,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfAreEquals()
         {
             _customer.Name = "Paulo";
@@ -237,7 +258,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfTrue()
         {
             _customer.Active = true;
@@ -246,7 +268,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod] [TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfFalse()
         {
             _customer.Active = false;
@@ -255,7 +278,8 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
-        [TestMethod][TestCategory("NotificationPattern")]
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfNotCpf()
         {
             _customer.Cpf = "123";
@@ -294,6 +318,37 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
+        public void IfEqualsZero()
+        {
+            _customer.Age = 0;
+
+            new AddNotifications<Customer>(_customer).IfEqualsZero(x => x.Age);
+
+            Assert.AreEqual(false, _customer.IsValid());
+        }
+
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
+        public void IfNull()
+        {
+
+            new AddNotifications<Customer>(_customer).IfNull(x => x.NumberOfDependents);
+
+            Assert.AreEqual(false, _customer.IsValid());
+        }
+
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
+        public void IfNotNull()
+        {
+            _customer.NumberOfDependents = 2;
+            new AddNotifications<Customer>(_customer).IfNotNull(x => x.NumberOfDependents);
+
+            Assert.AreEqual(false, _customer.IsValid());
+        }
+
         
     }
 
@@ -309,6 +364,8 @@ namespace prmToolkit.NotificationPattern.Tests
 
         public string   Cpf { get; set; }
         public string   Cnpj { get; set; }
+
+        public int? NumberOfDependents { get; set; }
 
         public IEnumerable<Customer> Customers { get; set; }
     }

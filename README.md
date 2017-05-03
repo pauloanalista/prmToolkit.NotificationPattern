@@ -41,14 +41,13 @@ Install-Package prmToolkit.NotificationPattern
             Customer _customer = new Customer();
             _customer.Name = "1234";
             
-            
+            //Adicionando as notificações na sua classe
             new AddNotifications<Customer>(_customer)
                 .IfNotContains(x => x.Name, "567") //Se não contém a palavra 567 adicione uma notificação
                 .IfNotGuid(x => x.Name); //Se não for um Guid valido adicione uma notificação
         }
         
         //Também é possível obter as notificações de uma classe filha para uma classe pai.
-        
         public class Pedido : Notifiable
         {
             public void AddItem(ItemDoPedido item)
@@ -59,6 +58,18 @@ Install-Package prmToolkit.NotificationPattern
                 if(item.IsValid()) //Se o item não tem notificações deixa continuar
                 _items.Add(item);
             }
+        }
+        
+        //É possível adicionar notificações manualmente
+        public bool AutenticarUsuario(string username, string password)
+        {
+            if (Username == username && Password == EncryptPassword(password))
+                return true;
+            
+            //Adicionando notificações manualmente
+            AddNotification("User", "Usuário ou senha inválidos");
+            
+            return false;
         }
 ```
 

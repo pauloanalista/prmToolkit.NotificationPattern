@@ -13,7 +13,16 @@ Install-Package prmToolkit.NotificationPattern
 ```
 
 ### Exemplo de como usar
+Atualmente as mensagens das notificações tem suporte aos idiomas pt-BR e en-US.
+Caso não defina o idioma que quer usar ele irá se basear no idioma local, caso não exista ele assumira o pt-BR.
 
+Para setar o idioma, utilize a linhas abaixo:
+```sh
+        Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+        Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+```
+
+Trabalhando com classes
 ```sh
         //Crie uma classe que herde de Notifiable para que seja notificavél
         public class Customer : Notifiable

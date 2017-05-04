@@ -1,6 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Threading;
 
 namespace prmToolkit.NotificationPattern.Tests
 {
@@ -112,7 +115,7 @@ namespace prmToolkit.NotificationPattern.Tests
             customer10.Age = 10;
             customer11.Age = 11;
 
-            
+
             new AddNotifications<Customer>(customer10).IfGreaterOrEqualsThan(x => x.Age, 10);
             new AddNotifications<Customer>(customer11).IfGreaterOrEqualsThan(x => x.Age, 10);
             Assert.AreEqual(false, customer10.IsValid());
@@ -129,7 +132,7 @@ namespace prmToolkit.NotificationPattern.Tests
             DateTime now = DateTime.Now;
 
             customer10.CreationDate = now;
-            customer11.CreationDate = now.AddDays( 1);
+            customer11.CreationDate = now.AddDays(1);
 
 
             new AddNotifications<Customer>(customer10).IfGreaterOrEqualsThan(x => x.CreationDate, now);
@@ -172,15 +175,15 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, customer10.IsValid());
             Assert.AreEqual(false, customer11.IsValid());
         }
-        
+
         [TestMethod]
         [TestCategory("NotificationPattern")]
         public void IfNotRange()
         {
             _customer.Age = 10;
 
-            new AddNotifications<Customer>(_customer).IfNotRange(x => x.Age, 11,21);
-            
+            new AddNotifications<Customer>(_customer).IfNotRange(x => x.Age, 11, 21);
+
             Assert.AreEqual(false, _customer.IsValid());
         }
 
@@ -310,13 +313,25 @@ namespace prmToolkit.NotificationPattern.Tests
 
         [TestMethod]
         [TestCategory("NotificationPattern")]
-        public void IfCollectionIsNull()
+        public void IfCollectionIsNullOrEmpty()
         {
             
-            new AddNotifications<Customer>(_customer).IfCollectionIsNull(x => x.Customers);
+            new AddNotifications<Customer>(_customer).IfCollectionIsNullOrEmpty(x => x.CustomersIEnumerable);
+            new AddNotifications<Customer>(_customer).IfCollectionIsNullOrEmpty(x => x.CustomersIList);
+            new AddNotifications<Customer>(_customer).IfCollectionIsNullOrEmpty(x => x.CustomersICollection);
+
+            _customer.CustomersIEnumerable = new System.Collections.Generic.List<Customer>().AsEnumerable();
+            _customer.CustomersIList = new List<Customer>();
+            _customer.CustomersICollection = new List<Customer>();
+            new AddNotifications<Customer>(_customer).IfCollectionIsNullOrEmpty(x => x.CustomersIEnumerable);
+            new AddNotifications<Customer>(_customer).IfCollectionIsNullOrEmpty(x => x.CustomersIList);
+            new AddNotifications<Customer>(_customer).IfCollectionIsNullOrEmpty(x => x.CustomersICollection);
 
             Assert.AreEqual(false, _customer.IsValid());
+            Assert.AreEqual(true, _customer.Notifications.Count()==6);
         }
+
+        
 
         [TestMethod]
         [TestCategory("NotificationPattern")]
@@ -349,6 +364,24 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(false, _customer.IsValid());
         }
 
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
+        public void GivenACultureToGetATranslatedMessage()
+        {
+            _customer.NumberOfDependents = 2;
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+            new AddNotifications<Customer>(_customer).IfNotNull(x => x.NumberOfDependents);
+
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            new AddNotifications<Customer>(_customer).IfNotNull(x => x.NumberOfDependents);
+
+            Assert.AreEqual(false, _customer.IsValid());
+            Assert.IsTrue(_customer.Notifications.Count == 2);
+            Assert.IsTrue(_customer.Notifications.Any(x => x.Message.Equals("O campo NumberOfDependents deve ser igual a nulo.")),"É esperado uma mensagem no idioma portugues");
+            Assert.IsTrue(_customer.Notifications.Any(x => x.Message.Equals("Field NumberOfDependents should be equals to null.")), "É esperado uma mensagem no idioma ingles");
+            
+        }
+
         
     }
 
@@ -362,11 +395,13 @@ namespace prmToolkit.NotificationPattern.Tests
 
         public bool Active { get; set; }
 
-        public string   Cpf { get; set; }
-        public string   Cnpj { get; set; }
+        public string Cpf { get; set; }
+        public string Cnpj { get; set; }
 
         public int? NumberOfDependents { get; set; }
 
-        public IEnumerable<Customer> Customers { get; set; }
+        public IEnumerable<Customer> CustomersIEnumerable { get; set; }
+        public ICollection<Customer> CustomersICollection { get; set; }
+        public IList<Customer> CustomersIList { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace prmToolkit.NotificationPattern
 {
@@ -23,6 +24,11 @@ namespace prmToolkit.NotificationPattern
         public void AddNotifications(IReadOnlyCollection<Notification> notifications)
         {
             _notifications.AddRange(notifications);
+        }
+
+        public void AddNotifications(params Notifiable[] objects)
+        {
+            objects.ToList().ForEach(x => _notifications.AddRange(x.Notifications));
         }
 
         public void AddNotifications(IList<Notification> notifications)

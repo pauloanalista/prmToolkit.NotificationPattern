@@ -3,3 +3,13 @@ C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.Notifi
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.csprojResolveAssemblyReference.cache
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.dll
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.pdb
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.csprojResolveAssemblyReference.cache
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.csproj.GenerateResource.Cache
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.pdb
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Debug\prmToolkit.NotificationPattern.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Debug\prmToolkit.NotificationPattern.pdb
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Debug\en-US\prmToolkit.NotificationPattern.resources.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\en-US\prmToolkit.NotificationPattern.resources.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.Resources.Message.resources
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.Resources.Message.en-US.resources

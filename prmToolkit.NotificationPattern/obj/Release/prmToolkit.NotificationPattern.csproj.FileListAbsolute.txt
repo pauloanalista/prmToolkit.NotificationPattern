@@ -1,8 +1,13 @@
-C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Release\prmToolkit.NotificationPattern.dll
-C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Release\prmToolkit.NotificationPattern.pdb
-C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Release\prmToolkit.NotificationPattern.dll
-C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Release\prmToolkit.NotificationPattern.pdb
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Release\prmToolkit.NotificationPattern.dll
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Release\prmToolkit.NotificationPattern.pdb
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Release\prmToolkit.NotificationPattern.dll
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Release\prmToolkit.NotificationPattern.pdb
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Release\prmToolkit.NotificationPattern.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Release\prmToolkit.NotificationPattern.pdb
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Release\en-US\prmToolkit.NotificationPattern.resources.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Release\prmToolkit.NotificationPattern.Resources.Message.resources
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Release\prmToolkit.NotificationPattern.Resources.Message.en-US.resources
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Release\prmToolkit.NotificationPattern.csproj.GenerateResource.Cache
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Release\en-US\prmToolkit.NotificationPattern.resources.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Release\prmToolkit.NotificationPattern.dll
+C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Release\prmToolkit.NotificationPattern.pdb

@@ -63,7 +63,14 @@ public class Pedido : Notifiable
     {
         //Adiciona as notificações de ItemDoPedido no Pedido
         AddNotifications(item.Notifications);
-
+        
+        //ou
+        AddNotifications(item);
+        
+        //Também é possível adicionar varios objetos notificaveis de uma so vez.
+        //Ex:        
+        //AddNotifications(objetoNotificavel1, objetoNotificavel2, objetoNotificavel3);
+        
         if(item.IsValid()) //Se o item não tem notificações deixa continuar
         _items.Add(item);
     }

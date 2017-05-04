@@ -14,72 +14,72 @@ Install-Package prmToolkit.NotificationPattern
 
 ### Exemplo de como usar
 Atualmente as mensagens das notificações tem suporte aos idiomas pt-BR e en-US.
-Caso não defina o idioma que quer usar ele irá se basear no idioma local, caso não exista ele assumira o pt-BR.
+Caso não defina o idioma que quer usar ele irá se basear no idioma local, caso não exista suporte ele assumira o pt-BR.
 
 Para setar o idioma, utilize a linhas abaixo:
 ```sh
-        Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
-        Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
 ```
 
 Trabalhando com classes
 ```sh
-        //Crie uma classe que herde de Notifiable para que seja notificavél
-        public class Customer : Notifiable
-        {
-            public string Name { get; set; }
+//Crie uma classe que herde de Notifiable para que seja notificavél
+public class Customer : Notifiable
+{
+    public string Name { get; set; }
 
-            public int Age { get; set; }
+    public int Age { get; set; }
 
-            public DateTime CreationDate { get; set; }
+    public DateTime CreationDate { get; set; }
 
-            public bool Active { get; set; }
+    public bool Active { get; set; }
 
-            public string   Cpf { get; set; }
-            
-            public string   Cnpj { get; set; }
+    public string   Cpf { get; set; }
 
-            public IEnumerable<Customer> Customers { get; set; }
-        }
-    
-        
+    public string   Cnpj { get; set; }
 
-        //Dentro de algum método ou construtor qualquer
-        public void Metodo_Xpto()
-        {
-            Customer _customer = new Customer();
-            _customer.Name = "1234";
-            
-            //Adicionando as notificações na sua classe
-            new AddNotifications<Customer>(_customer)
-                .IfNotContains(x => x.Name, "567") //Se não contém a palavra 567 adicione uma notificação
-                .IfNotGuid(x => x.Name); //Se não for um Guid valido adicione uma notificação
-        }
-        
-        //Também é possível obter as notificações de uma classe filha para uma classe pai.
-        public class Pedido : Notifiable
-        {
-            public void AddItem(ItemDoPedido item)
-            {
-                //Adiciona as notificações de ItemDoPedido no Pedido
-                AddNotifications(item.Notifications);
-            
-                if(item.IsValid()) //Se o item não tem notificações deixa continuar
-                _items.Add(item);
-            }
-        }
-        
-        //É possível adicionar notificações manualmente
-        public bool AutenticarUsuario(string username, string password)
-        {
-            if (Username == username && Password == EncryptPassword(password))
-                return true;
-            
-            //Adicionando notificações manualmente
-            AddNotification("User", "Usuário ou senha inválidos");
-            
-            return false;
-        }
+    public IEnumerable<Customer> Customers { get; set; }
+}
+
+
+
+//Dentro de algum método ou construtor qualquer
+public void Metodo_Xpto()
+{
+    Customer _customer = new Customer();
+    _customer.Name = "1234";
+
+    //Adicionando as notificações na sua classe
+    new AddNotifications<Customer>(_customer)
+        .IfNotContains(x => x.Name, "567") //Se não contém a palavra 567 adicione uma notificação
+        .IfNotGuid(x => x.Name); //Se não for um Guid valido adicione uma notificação
+}
+
+//Também é possível obter as notificações de uma classe filha para uma classe pai.
+public class Pedido : Notifiable
+{
+    public void AddItem(ItemDoPedido item)
+    {
+        //Adiciona as notificações de ItemDoPedido no Pedido
+        AddNotifications(item.Notifications);
+
+        if(item.IsValid()) //Se o item não tem notificações deixa continuar
+        _items.Add(item);
+    }
+}
+
+//É possível adicionar notificações manualmente
+public bool AutenticarUsuario(string username, string password)
+{
+    if (Username == username && Password == EncryptPassword(password))
+        return true;
+
+    //Adicionando notificações manualmente
+    AddNotification("User", "Usuário ou senha inválidos");
+
+    return false;
+}
 ```
 
 ### Metodos de validação:

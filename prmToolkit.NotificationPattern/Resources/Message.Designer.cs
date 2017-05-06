@@ -171,9 +171,9 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve ser maior ou igual a {1}..
         /// </summary>
-        public static string IfLowerThen {
+        public static string IfLowerThan {
             get {
-                return ResourceManager.GetString("IfLowerThen", resourceCulture);
+                return ResourceManager.GetString("IfLowerThan", resourceCulture);
             }
         }
         

@@ -39,11 +39,11 @@ namespace prmToolkit.NotificationPattern.Tests
 
         [TestMethod]
         [TestCategory("NotificationPattern")]
-        public void IfLowerThen()
+        public void IfLowerThan()
         {
             _customer.Age = 10;
             new AddNotifications<Customer>(_customer)
-                .IfLowerThen(x => x.Age, 11);
+                .IfLowerThan(x => x.Age, 11);
 
             Assert.AreEqual(false, _customer.IsValid());
         }

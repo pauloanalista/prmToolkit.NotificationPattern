@@ -153,7 +153,7 @@
   <data name="IfLowerOrEqualsThan" xml:space="preserve">
     <value>O campo {0} deve ser maior que {1}.</value>
   </data>
-  <data name="IfLowerThen" xml:space="preserve">
+  <data name="IfLowerThan" xml:space="preserve">
     <value>O campo {0} deve ser maior ou igual a {1}.</value>
   </data>
   <data name="IfNotAreEquals" xml:space="preserve">

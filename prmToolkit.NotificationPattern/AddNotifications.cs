@@ -123,7 +123,7 @@ namespace prmToolkit.NotificationPattern
             return this;
         }
 
-        #region IfLowerThen
+        #region IfLowerThan
         /// <summary>
         /// Dado um int, adicione uma notificação se seu valor for menor que o parâmetro min
         /// </summary>
@@ -131,13 +131,13 @@ namespace prmToolkit.NotificationPattern
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Error Message (Optional)</param>
         /// <returns></returns>
-        public AddNotifications<T> IfLowerThen(Expression<Func<T, int>> selector, int min, string message = "")
+        public AddNotifications<T> IfLowerThan(Expression<Func<T, int>> selector, int min, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < min)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThen, name, min) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThan, name, min) : message);
 
             return this;
         }
@@ -149,13 +149,13 @@ namespace prmToolkit.NotificationPattern
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Error Message (Optional)</param>
         /// <returns></returns>
-        public AddNotifications<T> IfLowerThen(Expression<Func<T, float>> selector, float min, string message = "")
+        public AddNotifications<T> IfLowerThan(Expression<Func<T, float>> selector, float min, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < min)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThen, name, min) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThan, name, min) : message);
 
             return this;
         }
@@ -167,13 +167,13 @@ namespace prmToolkit.NotificationPattern
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Error Message (Optional)</param>
         /// <returns></returns>
-        public AddNotifications<T> IfLowerThen(Expression<Func<T, double>> selector, double min, string message = "")
+        public AddNotifications<T> IfLowerThan(Expression<Func<T, double>> selector, double min, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < min)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThen, name, min) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThan, name, min) : message);
 
             return this;
         }
@@ -185,13 +185,13 @@ namespace prmToolkit.NotificationPattern
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Error Message (Optional)</param>
         /// <returns></returns>
-        public AddNotifications<T> IfLowerThen(Expression<Func<T, decimal>> selector, decimal min, string message = "")
+        public AddNotifications<T> IfLowerThan(Expression<Func<T, decimal>> selector, decimal min, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < min)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThen, name, min) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThan, name, min) : message);
 
             return this;
         }
@@ -203,13 +203,13 @@ namespace prmToolkit.NotificationPattern
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Error Message (Optional)</param>
         /// <returns></returns>
-        public AddNotifications<T> IfLowerThen(Expression<Func<T, DateTime>> selector, DateTime min, string message = "")
+        public AddNotifications<T> IfLowerThan(Expression<Func<T, DateTime>> selector, DateTime min, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < min)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThen, name, min) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThan, name, min) : message);
 
             return this;
         }

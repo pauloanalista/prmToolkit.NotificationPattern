@@ -42,5 +42,6 @@ namespace prmToolkit.NotificationPattern
         }
 
         public bool IsValid() => _notifications.Count == 0;
+
     }
 }

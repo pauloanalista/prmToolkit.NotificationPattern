@@ -115,7 +115,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve ser maior ou igual a {1}..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve ser menor que {1}..
         /// </summary>
         public static string IfGreaterOrEqualsThan {
             get {
@@ -124,11 +124,29 @@ namespace prmToolkit.NotificationPattern.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve ter pelo menos {1} caracter(es)..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve ser menor ou igual a {1}..
         /// </summary>
         public static string IfGreaterThan {
             get {
                 return ResourceManager.GetString("IfGreaterThan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve ter seu comprimento menor ou igual a {1} caracter(es)..
+        /// </summary>
+        public static string IfLengthGreaterThan {
+            get {
+                return ResourceManager.GetString("IfLengthGreaterThan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve ter seu comprimento maior ou igual a {1} caracter(es)..
+        /// </summary>
+        public static string IfLengthLowerThan {
+            get {
+                return ResourceManager.GetString("IfLengthLowerThan", resourceCulture);
             }
         }
         
@@ -142,7 +160,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve ser menor ou igual a {1}..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve ser maior que {1}..
         /// </summary>
         public static string IfLowerOrEqualsThan {
             get {
@@ -151,7 +169,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve ter pelo menos {1} caracter(es)..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve ser maior ou igual a {1}..
         /// </summary>
         public static string IfLowerThen {
             get {
@@ -192,6 +210,15 @@ namespace prmToolkit.NotificationPattern.Resources {
         public static string IfNotCpf {
             get {
                 return ResourceManager.GetString("IfNotCpf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} deve ser uma data válida..
+        /// </summary>
+        public static string IfNotDate {
+            get {
+                return ResourceManager.GetString("IfNotDate", resourceCulture);
             }
         }
         
@@ -270,9 +297,9 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a O campo {0} é obrigatório com tamanho mínimo de {1} caracter(es) e máximo {2} caracter(es)..
         /// </summary>
-        public static string IfNullOrEmptyOrInvalidLength {
+        public static string IfNullOrInvalidLength {
             get {
-                return ResourceManager.GetString("IfNullOrEmptyOrInvalidLength", resourceCulture);
+                return ResourceManager.GetString("IfNullOrInvalidLength", resourceCulture);
             }
         }
         

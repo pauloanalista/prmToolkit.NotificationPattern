@@ -41,9 +41,9 @@ namespace prmToolkit.NotificationPattern.Tests
         [TestCategory("NotificationPattern")]
         public void IfLowerThen()
         {
-            _customer.Name = "A";
+            _customer.Age = 10;
             new AddNotifications<Customer>(_customer)
-                .IfLowerThen(x => x.Name, 10);
+                .IfLowerThen(x => x.Age, 11);
 
             Assert.AreEqual(false, _customer.IsValid());
         }
@@ -52,8 +52,26 @@ namespace prmToolkit.NotificationPattern.Tests
         [TestCategory("NotificationPattern")]
         public void IfGreaterThan()
         {
+            _customer.Age = 35;
+            new AddNotifications<Customer>(_customer).IfGreaterThan(x => x.Age, 20);
+            Assert.AreEqual(false, _customer.IsValid());
+        }
+
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
+        public void IfLengthGreaterThan()
+        {
             _customer.Name = "Paulo Rogério";
-            new AddNotifications<Customer>(_customer).IfGreaterThan(x => x.Name, 1);
+            new AddNotifications<Customer>(_customer).IfLengthGreaterThan(x => x.Name, 1);
+            Assert.AreEqual(false, _customer.IsValid());
+        }
+
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
+        public void IfLengthLowerThan()
+        {
+            _customer.Name = "Paulo Rogério";
+            new AddNotifications<Customer>(_customer).IfLengthLowerThan(x => x.Name, 200);
             Assert.AreEqual(false, _customer.IsValid());
         }
 
@@ -66,7 +84,6 @@ namespace prmToolkit.NotificationPattern.Tests
 
             Assert.AreEqual(false, _customer.IsValid());
         }
-
 
         [TestMethod]
         [TestCategory("NotificationPattern")]
@@ -87,6 +104,24 @@ namespace prmToolkit.NotificationPattern.Tests
             Assert.AreEqual(1, customerNameMaxInvalid.Notifications.Count);
         }
 
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
+        public void IfNullOrOrInvalidLength()
+        {
+            Customer customerNameEmpty = new Customer();
+            Customer customerNameMinInvalid = new Customer();
+            customerNameMinInvalid.Name = "a";
+            Customer customerNameMaxInvalid = new Customer();
+            customerNameMaxInvalid.Name = "Nome com mais de 10 caracteres";
+
+            new AddNotifications<Customer>(customerNameEmpty).IfNullOrInvalidLength(x => x.Name, 3, 10);
+            new AddNotifications<Customer>(customerNameMinInvalid).IfNullOrInvalidLength(x => x.Name, 3, 10);
+            new AddNotifications<Customer>(customerNameMaxInvalid).IfNullOrInvalidLength(x => x.Name, 3, 10);
+
+            Assert.AreEqual(1, customerNameEmpty.Notifications.Count);
+            Assert.AreEqual(1, customerNameMinInvalid.Notifications.Count);
+            Assert.AreEqual(1, customerNameMaxInvalid.Notifications.Count);
+        }
 
         [TestMethod]
         [TestCategory("NotificationPattern")]
@@ -315,7 +350,7 @@ namespace prmToolkit.NotificationPattern.Tests
         [TestCategory("NotificationPattern")]
         public void IfCollectionIsNullOrEmpty()
         {
-            
+
             new AddNotifications<Customer>(_customer).IfCollectionIsNullOrEmpty(x => x.CustomersIEnumerable);
             new AddNotifications<Customer>(_customer).IfCollectionIsNullOrEmpty(x => x.CustomersIList);
             new AddNotifications<Customer>(_customer).IfCollectionIsNullOrEmpty(x => x.CustomersICollection);
@@ -328,10 +363,10 @@ namespace prmToolkit.NotificationPattern.Tests
             new AddNotifications<Customer>(_customer).IfCollectionIsNullOrEmpty(x => x.CustomersICollection);
 
             Assert.AreEqual(false, _customer.IsValid());
-            Assert.AreEqual(true, _customer.Notifications.Count()==6);
+            Assert.AreEqual(true, _customer.Notifications.Count() == 6);
         }
 
-        
+
 
         [TestMethod]
         [TestCategory("NotificationPattern")]
@@ -377,12 +412,20 @@ namespace prmToolkit.NotificationPattern.Tests
 
             Assert.AreEqual(false, _customer.IsValid());
             Assert.IsTrue(_customer.Notifications.Count == 2);
-            Assert.IsTrue(_customer.Notifications.Any(x => x.Message.Equals("O campo NumberOfDependents deve ser igual a nulo.")),"É esperado uma mensagem no idioma portugues");
+            Assert.IsTrue(_customer.Notifications.Any(x => x.Message.Equals("O campo NumberOfDependents deve ser igual a nulo.")), "É esperado uma mensagem no idioma portugues");
             Assert.IsTrue(_customer.Notifications.Any(x => x.Message.Equals("Field NumberOfDependents should be equals to null.")), "É esperado uma mensagem no idioma ingles");
-            
+
         }
 
-        
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
+        public void IfNotDate()
+        {
+            _customer.Name = "data invalida";
+            new AddNotifications<Customer>(_customer).IfNotDate(x => x.Name);
+
+            Assert.AreEqual(false, _customer.IsValid());
+        }
     }
 
     public class Customer : Notifiable

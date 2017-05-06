@@ -136,19 +136,25 @@
     <value>O campo {0} deve ser verdadeiro.</value>
   </data>
   <data name="IfGreaterOrEqualsThan" xml:space="preserve">
-    <value>O campo {0} deve ser maior ou igual a {1}.</value>
+    <value>O campo {0} deve ser menor que {1}.</value>
   </data>
   <data name="IfGreaterThan" xml:space="preserve">
-    <value>O campo {0} deve ter pelo menos {1} caracter(es).</value>
+    <value>O campo {0} deve ser menor ou igual a {1}.</value>
+  </data>
+  <data name="IfLengthGreaterThan" xml:space="preserve">
+    <value>O campo {0} deve ter seu comprimento menor ou igual a {1} caracter(es).</value>
+  </data>
+  <data name="IfLengthLowerThan" xml:space="preserve">
+    <value>O campo {0} deve ter seu comprimento maior ou igual a {1} caracter(es).</value>
   </data>
   <data name="IfLengthNoEqual" xml:space="preserve">
     <value>O campo {0} deve ter exatamente {1} caracter(es).</value>
   </data>
   <data name="IfLowerOrEqualsThan" xml:space="preserve">
-    <value>O campo {0} deve ser menor ou igual a {1}.</value>
+    <value>O campo {0} deve ser maior que {1}.</value>
   </data>
   <data name="IfLowerThen" xml:space="preserve">
-    <value>O campo {0} deve ter pelo menos {1} caracter(es).</value>
+    <value>O campo {0} deve ser maior ou igual a {1}.</value>
   </data>
   <data name="IfNotAreEquals" xml:space="preserve">
     <value>O campo {0} deve ser igual a {1}.</value>
@@ -161,6 +167,9 @@
   </data>
   <data name="IfNotCpf" xml:space="preserve">
     <value>O campo {0} deve ser um Cpf válido.</value>
+  </data>
+  <data name="IfNotDate" xml:space="preserve">
+    <value>O campo {0} deve ser uma data válida.</value>
   </data>
   <data name="IfNotEmail" xml:space="preserve">
     <value>O campo {0} deve ser um endereço de e-mail válido.</value>
@@ -186,7 +195,7 @@
   <data name="IfNullOrEmpty" xml:space="preserve">
     <value>O campo {0} é obrigatório.</value>
   </data>
-  <data name="IfNullOrEmptyOrInvalidLength" xml:space="preserve">
+  <data name="IfNullOrInvalidLength" xml:space="preserve">
     <value>O campo {0} é obrigatório com tamanho mínimo de {1} caracter(es) e máximo {2} caracter(es).</value>
   </data>
   <data name="IfNullOrWhiteSpace" xml:space="preserve">

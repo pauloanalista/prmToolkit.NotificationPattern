@@ -136,19 +136,25 @@
     <value>Field {0} should be true.</value>
   </data>
   <data name="IfGreaterOrEqualsThan" xml:space="preserve">
-    <value>The field {0} must be greater than or equal to {1}.</value>
+    <value>Field {0} must be lower than {1}.</value>
   </data>
   <data name="IfGreaterThan" xml:space="preserve">
-    <value>Field {0} must have at least {1} characters.</value>
+    <value>Field {0} must be lower than or equal to {1}.</value>
+  </data>
+  <data name="IfLengthGreaterThan" xml:space="preserve">
+    <value>Field {0} has a length lower than or equal to {1} characters.</value>
+  </data>
+  <data name="IfLengthLowerThan" xml:space="preserve">
+    <value>Field {0} has a length greater than or equal to {1} characters.</value>
   </data>
   <data name="IfLengthNoEqual" xml:space="preserve">
     <value>Field {0} must have exactly {1} characters.</value>
   </data>
   <data name="IfLowerOrEqualsThan" xml:space="preserve">
-    <value>The field {0} must be Lower than or equal to {1}.</value>
+    <value>Field {0} must be greater than {1}.</value>
   </data>
   <data name="IfLowerThen" xml:space="preserve">
-    <value>Field {0} must have at least {1} characters.</value>
+    <value>Field {0} must be greater than or equal to {1}.</value>
   </data>
   <data name="IfNotAreEquals" xml:space="preserve">
     <value>Field {0} should be equals to {1}.</value>
@@ -161,6 +167,9 @@
   </data>
   <data name="IfNotCpf" xml:space="preserve">
     <value>Field {0} must be a valid Cpf.</value>
+  </data>
+  <data name="IfNotDate" xml:space="preserve">
+    <value>Field {0} must be a valid date.</value>
   </data>
   <data name="IfNotEmail" xml:space="preserve">
     <value>Field {0} must be a valid E-mail address.</value>
@@ -186,7 +195,7 @@
   <data name="IfNullOrEmpty" xml:space="preserve">
     <value>Field {0} is required.</value>
   </data>
-  <data name="IfNullOrEmptyOrInvalidLength" xml:space="preserve">
+  <data name="IfNullOrInvalidLength" xml:space="preserve">
     <value>Field {0} is required with size min {1} and max {2}.</value>
   </data>
   <data name="IfNullOrWhiteSpace" xml:space="preserve">

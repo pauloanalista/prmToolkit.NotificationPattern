@@ -391,6 +391,15 @@ namespace prmToolkit.NotificationPattern.Tests
 
         [TestMethod]
         [TestCategory("NotificationPattern")]
+        public void IfNull_Object()
+        {
+            new AddNotifications<Customer>(_customer).IfNull(x => x.PropriedadeObject);
+
+            Assert.AreEqual(false, _customer.IsValid());
+        }
+
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
         public void IfNotNull()
         {
             _customer.NumberOfDependents = 2;
@@ -437,6 +446,8 @@ namespace prmToolkit.NotificationPattern.Tests
         public DateTime CreationDate { get; set; }
 
         public bool Active { get; set; }
+
+        public object PropriedadeObject { get; set; }
 
         public string Cpf { get; set; }
         public string Cnpj { get; set; }

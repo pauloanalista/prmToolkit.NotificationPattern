@@ -30,3 +30,4 @@ C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolk
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\obj\Release\prmToolkit.NotificationPattern.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\obj\Release\prmToolkit.NotificationPattern.Tests.dll
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\obj\Release\prmToolkit.NotificationPattern.Tests.pdb
+C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Release\en-US\prmToolkit.NotificationPattern.resources.dll

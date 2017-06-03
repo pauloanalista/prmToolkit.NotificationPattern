@@ -73,6 +73,9 @@ public class Pedido : Notifiable
         
         if(item.IsValid()) //Se o item não tem notificações deixa continuar
         _items.Add(item);
+        
+        //É possível limpar as notificações de um objeto se for necessário
+        _item.ClearNotifications();
     }
 }
 

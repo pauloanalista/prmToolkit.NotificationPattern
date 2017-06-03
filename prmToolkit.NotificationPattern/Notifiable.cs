@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace prmToolkit.NotificationPattern
@@ -67,10 +68,17 @@ namespace prmToolkit.NotificationPattern
         }
 
         /// <summary>
+        /// Limpa todas as notificações do objeto
+        /// </summary>
+        public void ClearNotifications()
+        {
+            _notifications.Clear();
+        }
+
+        /// <summary>
         /// Verifica se o objeto notificável é valido
         /// </summary>
         /// <returns>Retornar true quando o objeto é valido, ou seja, não possui notificações.</returns>
         public bool IsValid() => _notifications.Count == 0;
-
     }
 }

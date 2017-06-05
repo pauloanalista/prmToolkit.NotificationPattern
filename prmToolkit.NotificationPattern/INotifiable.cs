@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 
 namespace prmToolkit.NotificationPattern
 {
-    public interface INotifiable
+    public interface INotifiable : IDisposable
     {
         IReadOnlyCollection<Notification> Notifications { get; }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ComponentModel;
 
 namespace prmToolkit.NotificationPattern
 {
@@ -73,6 +74,13 @@ namespace prmToolkit.NotificationPattern
         public void ClearNotifications()
         {
             _notifications.Clear();
+        }
+
+        public void Dispose()
+        {
+            _notifications.Clear();
+
+            GC.SuppressFinalize(this);
         }
 
         /// <summary>

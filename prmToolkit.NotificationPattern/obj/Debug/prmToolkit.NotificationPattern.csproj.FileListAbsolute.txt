@@ -1,6 +1,5 @@
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Debug\prmToolkit.NotificationPattern.dll
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Debug\prmToolkit.NotificationPattern.pdb
-C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.csprojResolveAssemblyReference.cache
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.dll
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.pdb
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Debug\prmToolkit.NotificationPattern.dll

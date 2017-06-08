@@ -58,11 +58,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Message.en-US.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Message.en-US.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Message.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Message.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

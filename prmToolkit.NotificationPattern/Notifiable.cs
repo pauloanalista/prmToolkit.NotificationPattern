@@ -24,7 +24,7 @@ namespace prmToolkit.NotificationPattern
         }
 
         /// <summary>
-        /// Adiciona uma notificação
+        /// Adiciona uma notificação na classe principal
         /// </summary>
         /// <param name="notification">Objeto de notificação que deseja adicionar</param>
         public void AddNotification(Notification notification)
@@ -33,7 +33,7 @@ namespace prmToolkit.NotificationPattern
         }
 
         /// <summary>
-        /// Adiciona uma lista de notificações
+        /// Adiciona uma lista de notificações na classe principal
         /// </summary>
         /// <param name="notifications">Lista de notificações que deseja adicionar</param>
         public void AddNotifications(IReadOnlyCollection<Notification> notifications)
@@ -42,7 +42,7 @@ namespace prmToolkit.NotificationPattern
         }
 
         /// <summary>
-        /// Adiciona uma coleção de objetos notificaveis na classe principal
+        /// Adiciona notificações de uma coleção de objetos notificaveis na classe principal
         /// </summary>
         /// <param name="objects">Objetos notificáveis</param>
         public void AddNotifications(params Notifiable[] objects)
@@ -51,7 +51,16 @@ namespace prmToolkit.NotificationPattern
         }
 
         /// <summary>
-        /// Adiciona uma lista de notificações
+        /// Adiciona notificações de coleções de coleção de objetos notificaveis na classe principal
+        /// </summary>
+        /// <param name="objects">Objetos notificáveis</param>
+        public void AddNotifications(params IEnumerable<Notifiable>[] objects)
+        {
+            objects.ToList().ForEach(x => x.ToList().ForEach(n => _notifications.AddRange(n.Notifications)));
+        }
+
+        /// <summary>
+        /// Adiciona uma lista de notificações na classe principal
         /// </summary>
         /// <param name="notifications">Lista de notificações que deseja adicionar</param>
         public void AddNotifications(IList<Notification> notifications)
@@ -60,7 +69,7 @@ namespace prmToolkit.NotificationPattern
         }
 
         /// <summary>
-        /// Adiciona uma lista de notificações
+        /// Adiciona uma lista de notificações na classe principal
         /// </summary>
         /// <param name="notifications">Lista de notificações que deseja adicionar</param>
         public void AddNotifications(ICollection<Notification> notifications)

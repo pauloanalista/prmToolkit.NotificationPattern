@@ -55,8 +55,15 @@ public void Metodo_Xpto()
         .IfNotContains(x => x.Name, "567") //Se não contém a palavra 567 adicione uma notificação
         .IfNotGuid(x => x.Name); //Se não for um Guid valido adicione uma notificação
 }
+```
 
-//Também é possível obter as notificações de uma classe filha para uma classe pai.
+
+##### Levando as notificações para camada superior
+Também é possível obter as notificações de uma classe filha para uma classe pai, ou seja, você pode pegar as notificações de objetos filhos e atribuir no pai. Isso é necessário caso você tenha o interesse de pegar as mensagens de uma entidade por exemplo e passar para seu serviço que por sua vez passa para sua api onde irá exibi-las para o usuário.
+
+É o mesmo conceito da Exception, sendo que para ela chegar no topo é necessário fazer uso do método AddNotifications.
+
+```sh
 public class Pedido : Notifiable
 {
     public void AddItem(ItemDoPedido item)
@@ -78,8 +85,11 @@ public class Pedido : Notifiable
         _item.ClearNotifications();
     }
 }
+```
 
-//É possível adicionar notificações manualmente
+##### É possível adicionar notificações manualmente
+
+```sh
 public bool AutenticarUsuario(string username, string password)
 {
     if (Username == username && Password == EncryptPassword(password))

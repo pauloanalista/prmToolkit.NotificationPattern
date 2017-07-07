@@ -16,7 +16,7 @@ Install-Package prmToolkit.NotificationPattern
 Atualmente as mensagens das notificações tem suporte aos idiomas pt-BR e en-US.
 Caso não defina o idioma que quer usar ele irá se basear no idioma local, caso não exista suporte ele assumira o pt-BR.
 
-Para setar o idioma, utilize a linhas abaixo:
+(Opcional) Para setar o idioma, utilize a linhas abaixo:
 ```sh
 Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
@@ -90,6 +90,39 @@ public bool AutenticarUsuario(string username, string password)
 
     return false;
 }
+```
+### Sobre as mensagens
+Cada método abaixo já possui sua mensagem padrão no idioma inglês ou português, ou seja, não sendo necessário o desenvolvedor passar uma mensagem personalizada por parametro.
+
+Caso tenha interesse em personalizar a mensagem, basta passar um aparametro a mais, como podemos ver abaixo:
+
+```sh
+//É possível passar mensagens personalizadas também
+public void Metodo_Xpto2()
+{
+    Customer _customer = new Customer();
+    _customer.Name = "1234";
+
+    //Adicionando as notificações na sua classe
+    new AddNotifications<Customer>(_customer)
+        .IfNotContains(x => x.Name, "567", "Aqui você pode passar sua mensagem personalizada") 
+        .IfNotGuid(x => x.Name, "Passe um id do tipo GUID"); 
+}
+```
+Também é possível passar uma mensagem personalizada através de um resource interno de sua aplicação.
+
+```sh
+//Informe o namespace using prmToolkit.NotificationPattern.Extensions;
+
+//Utilize o ToFormat
+public AdicionarResponse Adicionar(AdicionarRequest request)
+        {
+            if (request == null)
+            {
+                AddNotification("Adicionar", Message.OBJETO_X_E_OBRIGATORIO.ToFormat("AdicionarRequest"));
+                return null;
+            }
+        }
 ```
 
 ### Metodos de validação:

@@ -22,7 +22,7 @@ Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
 ```
 
-Trabalhando com classes
+#### Trabalhando com classes
 ```sh
 //Crie uma classe que herde de Notifiable para que seja notificavél
 public class Customer : Notifiable
@@ -91,39 +91,56 @@ public bool AutenticarUsuario(string username, string password)
     return false;
 }
 ```
-### Sobre as mensagens
+#### Sobre as mensagens
 Cada método abaixo já possui sua mensagem padrão no idioma inglês ou português, ou seja, não sendo necessário o desenvolvedor passar uma mensagem personalizada por parametro.
 
-Caso tenha interesse em personalizar a mensagem, basta passar um aparametro a mais, como podemos ver abaixo:
+##### Sem mensagem personalizada
 
 ```sh
 //É possível passar mensagens personalizadas também
-public void Metodo_Xpto2()
+public void Metodo_Sem_Mensagem_Personalizada()
 {
     Customer _customer = new Customer();
     _customer.Name = "1234";
 
     //Adicionando as notificações na sua classe
-    new AddNotifications<Customer>(_customer)
-        .IfNotContains(x => x.Name, "567", "Aqui você pode passar sua mensagem personalizada") 
-        .IfNotGuid(x => x.Name, "Passe um id do tipo GUID"); 
+    new AddNotifications<Customer>(_customer).IfNotGuid(x => x.Name); 
+    
+    //A aplicação irá imprimir
+    //O campo 1234 deve ser um Guid válido.
 }
 ```
+
+##### Com mensagem personalizada
+Caso tenha interesse em personalizar a mensagem, basta passar um parametro a mais, como podemos ver abaixo:
+
+```sh
+//É possível passar mensagens personalizadas também
+public void Metodo_Com_Mensagem_Personalizada()
+{
+    Customer _customer = new Customer();
+    _customer.Name = "1234";
+
+    //Adicionando as notificações na sua classe
+    new AddNotifications<Customer>(_customer).IfNotGuid(x => x.Name, "Passe um id do tipo GUID"); 
+}
+```
+
 Também é possível passar uma mensagem personalizada através de um resource interno de sua aplicação.
 
 ```sh
 public AdicionarResponse Adicionar(AdicionarRequest request)
-        {
-            if (request == null)
-            {
-                //Mensagem do resource "Objeto {0} é obrigatório"
-                //Utilize o ToFormat ao invés do string.Format para passar o parametro para string, assim seu codigo fica mais limpo
-                //Utilize para isso o namespace prmToolkit.NotificationPattern.Extensions
-                
-                AddNotification("Adicionar", Message.OBJETO_X_E_OBRIGATORIO.ToFormat("AdicionarRequest"));
-                return null;
-            }
-        }
+{
+    if (request == null)
+    {
+        //Mensagem do resource "Objeto {0} é obrigatório"
+        //Utilize o ToFormat ao invés do string.Format para passar o parametro para string, assim seu codigo fica mais limpo
+        //Utilize para isso o namespace prmToolkit.NotificationPattern.Extensions
+
+        AddNotification("Adicionar", Message.OBJETO_X_E_OBRIGATORIO.ToFormat("AdicionarRequest"));
+        return null;
+    }
+}
 ```
 
 ### Metodos de validação:

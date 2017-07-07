@@ -112,13 +112,14 @@ public void Metodo_Xpto2()
 Também é possível passar uma mensagem personalizada através de um resource interno de sua aplicação.
 
 ```sh
-//Informe o namespace using prmToolkit.NotificationPattern.Extensions;
-
-//Utilize o ToFormat
 public AdicionarResponse Adicionar(AdicionarRequest request)
         {
             if (request == null)
             {
+                //Mensagem do resource "Objeto {0} é obrigatório"
+                //Utilize o ToFormat ao invés do string.Format para passar o parametro para string, assim seu codigo fica mais limpo
+                //Utilize para isso o namespace prmToolkit.NotificationPattern.Extensions
+                
                 AddNotification("Adicionar", Message.OBJETO_X_E_OBRIGATORIO.ToFormat("AdicionarRequest"));
                 return null;
             }

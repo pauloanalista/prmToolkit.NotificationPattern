@@ -16,3 +16,13 @@ C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.Notifi
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.Resources.Message.en-US.resources
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.csproj.GenerateResource.Cache
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\en-US\prmToolkit.NotificationPattern.resources.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Debug\prmToolkit.NotificationPattern.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Debug\prmToolkit.NotificationPattern.pdb
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\bin\Debug\en-US\prmToolkit.NotificationPattern.resources.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.csprojResolveAssemblyReference.cache
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.Resources.Message.resources
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.Resources.Message.en-US.resources
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.csproj.GenerateResource.Cache
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\en-US\prmToolkit.NotificationPattern.resources.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern\obj\Debug\prmToolkit.NotificationPattern.pdb

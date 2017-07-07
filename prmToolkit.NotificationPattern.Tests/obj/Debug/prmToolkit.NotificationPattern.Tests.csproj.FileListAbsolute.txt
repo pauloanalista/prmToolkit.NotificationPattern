@@ -31,3 +31,18 @@ C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolk
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\obj\Debug\prmToolkit.NotificationPattern.Tests.dll
 C:\Users\Paulo Rogério\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\obj\Debug\prmToolkit.NotificationPattern.Tests.pdb
 C:\Users\paulo\Documents\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Debug\en-US\prmToolkit.NotificationPattern.resources.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Debug\prmToolkit.NotificationPattern.Tests.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Debug\prmToolkit.NotificationPattern.Tests.pdb
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Debug\prmToolkit.NotificationPattern.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Debug\prmToolkit.NotificationPattern.pdb
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\bin\Debug\en-US\prmToolkit.NotificationPattern.resources.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\obj\Debug\prmToolkit.NotificationPattern.Tests.csprojResolveAssemblyReference.cache
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\obj\Debug\prmToolkit.NotificationPattern.Tests.dll
+C:\_Paulo\GitHub\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.Tests\obj\Debug\prmToolkit.NotificationPattern.Tests.pdb

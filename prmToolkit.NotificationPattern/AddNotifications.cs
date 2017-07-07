@@ -1,4 +1,5 @@
-﻿using prmToolkit.NotificationPattern.Resources;
+﻿using prmToolkit.NotificationPattern.Extensions;
+using prmToolkit.NotificationPattern.Resources;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (string.IsNullOrEmpty(val))
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNullOrEmpty, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNullOrEmpty.ToFormat(name) : message);
 
             return this;
         }
@@ -46,7 +47,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (string.IsNullOrEmpty(val) || string.IsNullOrWhiteSpace(val))
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNullOrWhiteSpace, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNullOrWhiteSpace.ToFormat(name) : message);
 
             return this;
         }
@@ -63,7 +64,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (!string.IsNullOrEmpty(val))
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotNullOrEmpty, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotNullOrEmpty.ToFormat(name) : message);
 
             return this;
         }
@@ -82,7 +83,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (string.IsNullOrEmpty(val) || string.IsNullOrWhiteSpace(val) || val.Length < min || val.Length > max)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNullOrInvalidLength, name, min, max) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNullOrInvalidLength.ToFormat(name, min, max) : message);
 
             return this;
         }
@@ -99,7 +100,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (string.IsNullOrEmpty(val) || string.IsNullOrWhiteSpace(val) || val.Length < min || val.Length > max)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNullOrInvalidLength, name, min, max) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNullOrInvalidLength.ToFormat(name, min, max) : message);
 
             return this;
         }
@@ -118,7 +119,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (!string.IsNullOrEmpty(val) && val.Length < min)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLengthLowerThan, name, min) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLengthLowerThan.ToFormat(name, min) : message);
 
             return this;
         }
@@ -137,7 +138,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < min)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThan, name, min) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLowerThan.ToFormat(name, min) : message);
 
             return this;
         }
@@ -155,7 +156,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < min)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThan, name, min) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLowerThan.ToFormat(name, min) : message);
 
             return this;
         }
@@ -173,7 +174,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < min)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThan, name, min) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLowerThan.ToFormat(name, min) : message);
 
             return this;
         }
@@ -191,7 +192,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < min)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThan, name, min) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLowerThan.ToFormat(name, min) : message);
 
             return this;
         }
@@ -209,7 +210,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < min)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerThan, name, min) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLowerThan.ToFormat(name, min) : message);
 
             return this;
         }
@@ -229,7 +230,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val > max)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfGreaterThan, name, max) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfGreaterThan.ToFormat(name, max) : message);
 
             return this;
         }
@@ -247,7 +248,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val > max)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfGreaterThan, name, max) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfGreaterThan.ToFormat(name, max) : message);
 
             return this;
         }
@@ -265,7 +266,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val > max)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfGreaterThan, name, max) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfGreaterThan.ToFormat(name, max) : message);
 
             return this;
         }
@@ -283,7 +284,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val > max)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfGreaterThan, name, max) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfGreaterThan.ToFormat(name, max) : message);
 
             return this;
         }
@@ -301,7 +302,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val > max)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfGreaterThan, name, max) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfGreaterThan.ToFormat(name, max) : message);
 
             return this;
         }
@@ -320,7 +321,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (!string.IsNullOrEmpty(val) && val.Length > max)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLengthGreaterThan, name, max) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLengthGreaterThan.ToFormat(name, max) : message);
 
             return this;
         }
@@ -338,7 +339,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (!string.IsNullOrEmpty(val) && val.Length != length)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLengthNoEqual, name, length) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLengthNoEqual.ToFormat(name, length) : message);
 
             return this;
         }
@@ -355,7 +356,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (!Regex.IsMatch(val, @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"))
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotEmail, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotEmail.ToFormat(name) : message);
 
             return this;
         }
@@ -372,7 +373,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (!Regex.IsMatch(val, @"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$"))
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotUrl, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotUrl.ToFormat(name) : message);
 
             return this;
         }
@@ -391,7 +392,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val >= number)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfGreaterOrEqualsThan, name, number) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfGreaterOrEqualsThan.ToFormat(name, number) : message);
 
             return this;
         }
@@ -409,7 +410,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val >= number)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfGreaterOrEqualsThan, name, number) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfGreaterOrEqualsThan.ToFormat(name, number) : message);
 
             return this;
         }
@@ -427,7 +428,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val >= number)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfGreaterOrEqualsThan, name, number) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfGreaterOrEqualsThan.ToFormat(name, number) : message);
 
             return this;
         }
@@ -445,7 +446,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val >= number)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfGreaterOrEqualsThan, name, number) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfGreaterOrEqualsThan.ToFormat(name, number) : message);
 
             return this;
         }
@@ -463,7 +464,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val >= date)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfGreaterOrEqualsThan, name, date) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfGreaterOrEqualsThan.ToFormat(name, date) : message);
 
             return this;
         }
@@ -484,7 +485,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val <= number)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerOrEqualsThan, name, number) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLowerOrEqualsThan.ToFormat(name, number) : message);
 
             return this;
         }
@@ -502,7 +503,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val <= number)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerOrEqualsThan, name, number) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLowerOrEqualsThan.ToFormat(name, number) : message);
 
             return this;
         }
@@ -520,7 +521,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val <= number)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerOrEqualsThan, name, number) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLowerOrEqualsThan.ToFormat(name, number) : message);
 
             return this;
         }
@@ -538,7 +539,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val <= number)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerOrEqualsThan, name, number) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLowerOrEqualsThan.ToFormat(name, number) : message);
 
             return this;
         }
@@ -556,7 +557,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val <= date)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfLowerOrEqualsThan, name, date) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLowerOrEqualsThan.ToFormat(name, date) : message);
 
             return this;
         }
@@ -578,7 +579,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < a || val > b)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotRange, name, a, b) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotRange.ToFormat(name, a, b) : message);
 
             return this;
         }
@@ -597,7 +598,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < a || val > b)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotRange, name, a, b) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotRange.ToFormat(name, a, b) : message);
 
             return this;
         }
@@ -616,7 +617,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < a || val > b)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotRange, name, a, b) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotRange.ToFormat(name, a, b) : message);
 
             return this;
         }
@@ -635,7 +636,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < a || val > b)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotRange, name, a, b) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotRange.ToFormat(name, a, b) : message);
 
             return this;
         }
@@ -654,7 +655,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val < a || val > b)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotRange, name, a, b) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotRange.ToFormat(name, a, b) : message);
 
             return this;
         }
@@ -676,7 +677,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val > a && val < b)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfRange, name, a, b) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfRange.ToFormat(name, a, b) : message);
 
             return this;
         }
@@ -695,7 +696,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val > a && val < b)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfRange, name, a, b) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfRange.ToFormat(name, a, b) : message);
 
             return this;
         }
@@ -714,7 +715,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val > a && val < b)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfRange, name, a, b) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfRange.ToFormat(name, a, b) : message);
 
             return this;
         }
@@ -733,7 +734,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val > a && val < b)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfRange, name, a, b) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfRange.ToFormat(name, a, b) : message);
 
             return this;
         }
@@ -752,7 +753,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val > a && val < b)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfRange, name, a, b) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfRange.ToFormat(name, a, b) : message);
 
             return this;
         }
@@ -773,7 +774,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (!val.Contains(text))
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotContains, name, text) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotContains.ToFormat(name, text) : message);
 
             return this;
         }
@@ -792,7 +793,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val.Contains(text))
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfContains, name, text) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfContains.ToFormat(name, text) : message);
 
             return this;
         }
@@ -811,7 +812,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (!val.Equals(text, StringComparison.OrdinalIgnoreCase))
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotAreEquals, name, text) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotAreEquals.ToFormat(name, text) : message);
 
             return this;
         }
@@ -829,7 +830,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val != value)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotAreEquals, name, value) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotAreEquals.ToFormat(name, value) : message);
 
             return this;
         }
@@ -847,7 +848,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val != value)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotAreEquals, name, value) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotAreEquals.ToFormat(name, value) : message);
 
             return this;
         }
@@ -865,7 +866,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val != value)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotAreEquals, name, value) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotAreEquals.ToFormat(name, value) : message);
 
             return this;
         }
@@ -883,7 +884,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val != value)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotAreEquals, name, value) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotAreEquals.ToFormat(name, value) : message);
 
             return this;
         }
@@ -901,7 +902,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val != value)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotAreEquals, name, value) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotAreEquals.ToFormat(name, value) : message);
 
             return this;
         }
@@ -922,7 +923,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val.Equals(text, StringComparison.OrdinalIgnoreCase))
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfAreEquals, name, text) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfAreEquals.ToFormat(name, text) : message);
 
             return this;
         }
@@ -940,7 +941,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val == value)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfAreEquals, name, value) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfAreEquals.ToFormat(name, value) : message);
 
             return this;
         }
@@ -958,7 +959,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val == value)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfAreEquals, name, value) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfAreEquals.ToFormat(name, value) : message);
 
             return this;
         }
@@ -976,7 +977,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val == value)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfAreEquals, name, value) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfAreEquals.ToFormat(name, value) : message);
 
             return this;
         }
@@ -994,7 +995,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val == value)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfAreEquals, name, value) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfAreEquals.ToFormat(name, value) : message);
 
             return this;
         }
@@ -1012,7 +1013,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val == value)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfAreEquals, name, value) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfAreEquals.ToFormat(name, value) : message);
 
             return this;
         }
@@ -1030,7 +1031,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (data == true)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfTrue, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfTrue.ToFormat(name) : message);
 
             return this;
         }
@@ -1047,7 +1048,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (data == false)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfFalse, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfFalse.ToFormat(name) : message);
 
             return this;
         }
@@ -1068,7 +1069,7 @@ namespace prmToolkit.NotificationPattern
 
             if (string.IsNullOrWhiteSpace(cpf))
             {
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotCpf, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotCpf.ToFormat(name) : message);
                 return this;
             }
 
@@ -1082,7 +1083,7 @@ namespace prmToolkit.NotificationPattern
             cpf = cpf.Replace(".", "").Replace("-", "");
             if (cpf.Length != 11)
             {
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotCpf, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotCpf.ToFormat(name) : message);
                 return this;
             }
 
@@ -1111,7 +1112,7 @@ namespace prmToolkit.NotificationPattern
 
             if (isValid == false)
             {
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotCpf, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotCpf.ToFormat(name) : message);
                 return this;
             }
 
@@ -1131,7 +1132,7 @@ namespace prmToolkit.NotificationPattern
 
             if (string.IsNullOrEmpty(cnpj))
             {
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotCnpj, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotCnpj.ToFormat(name) : message);
                 return this;
             }
 
@@ -1145,7 +1146,7 @@ namespace prmToolkit.NotificationPattern
             cnpj = cnpj.Replace(".", "").Replace("-", "").Replace("/", "");
             if (cnpj.Length != 14)
             {
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotCnpj, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotCnpj.ToFormat(name) : message);
                 return this;
             }
             tempCnpj = cnpj.Substring(0, 12);
@@ -1172,7 +1173,7 @@ namespace prmToolkit.NotificationPattern
 
             if (isValid == false)
             {
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotCnpj, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotCnpj.ToFormat(name) : message);
                 return this;
             }
 
@@ -1194,7 +1195,7 @@ namespace prmToolkit.NotificationPattern
 
             if (Guid.TryParse(data, out x) == false)
             {
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotGuid, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotGuid.ToFormat(name) : message);
             }
             return this;
         }
@@ -1213,7 +1214,7 @@ namespace prmToolkit.NotificationPattern
 
             if (colectionValue == null)
             {
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfCollectionIsNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfCollectionIsNull.ToFormat(name) : message);
             }
 
             return this;
@@ -1233,7 +1234,7 @@ namespace prmToolkit.NotificationPattern
 
             if (colectionValue == null || colectionValue.ToList().Count <= 0)
             {
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfCollectionIsNullOrEmpty, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfCollectionIsNullOrEmpty.ToFormat(name) : message);
             }
 
             return this;
@@ -1252,7 +1253,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val == 0)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfEqualsZero, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfEqualsZero.ToFormat(name) : message);
 
             return this;
         }
@@ -1271,7 +1272,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val == null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1289,7 +1290,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val == null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1307,7 +1308,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val == null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1325,7 +1326,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val == null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1343,7 +1344,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val == null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1361,7 +1362,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val == null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1379,7 +1380,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val == null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1399,7 +1400,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val != null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1416,7 +1417,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val != null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1434,7 +1435,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val != null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1452,7 +1453,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val != null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1470,7 +1471,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val != null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1488,7 +1489,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val != null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1506,7 +1507,7 @@ namespace prmToolkit.NotificationPattern
             var name = ((MemberExpression)selector.Body).Member.Name;
 
             if (val != null)
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotNull, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotNull.ToFormat(name) : message);
 
             return this;
         }
@@ -1529,7 +1530,7 @@ namespace prmToolkit.NotificationPattern
             }
             catch
             {
-                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? string.Format(Message.IfNotDate, name) : message);
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotDate.ToFormat(name) : message);
             }
 
             return this;

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddNotifications.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="INotifiable.cs" />
     <Compile Include="Notifiable.cs" />
     <Compile Include="Notification.cs" />

@@ -196,7 +196,7 @@
     <value>Field {0} is required.</value>
   </data>
   <data name="IfNullOrInvalidLength" xml:space="preserve">
-    <value>Field {0} is required with size min {1} and max {2}.</value>
+    <value>The field {0} is required and must contain between {1} and {2} characters.</value>
   </data>
   <data name="IfNullOrWhiteSpace" xml:space="preserve">
     <value>Field {0} is required.</value>

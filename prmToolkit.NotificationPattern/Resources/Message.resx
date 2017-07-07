@@ -196,7 +196,7 @@
     <value>O campo {0} é obrigatório.</value>
   </data>
   <data name="IfNullOrInvalidLength" xml:space="preserve">
-    <value>O campo {0} é obrigatório com tamanho mínimo de {1} caracter(es) e máximo {2} caracter(es).</value>
+    <value>O campo {0} é obrigatório e deve conter entre {1} e {2} caracteres.</value>
   </data>
   <data name="IfNullOrWhiteSpace" xml:space="preserve">
     <value>O campo {0} é obrigatório.</value>

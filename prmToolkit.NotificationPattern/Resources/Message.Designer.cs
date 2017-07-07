@@ -295,7 +295,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O campo {0} é obrigatório com tamanho mínimo de {1} caracter(es) e máximo {2} caracter(es)..
+        ///   Looks up a localized string similar to O campo {0} é obrigatório e deve conter entre {1} e {2} caracteres..
         /// </summary>
         internal static string IfNullOrInvalidLength {
             get {

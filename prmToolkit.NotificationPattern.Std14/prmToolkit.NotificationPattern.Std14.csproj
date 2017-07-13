@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard1.4</TargetFramework>
+        <RootNamespace>prmToolkit.NotificationPattern</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="..\prmToolkit.NotificationPattern\AddNotifications.cs" Link="AddNotifications.cs" />
+        <Compile Include="..\prmToolkit.NotificationPattern\Extensions\StringExtension.cs" Link="Extensions\StringExtension.cs" />
+        <Compile Include="..\prmToolkit.NotificationPattern\INotifiable.cs" Link="INotifiable.cs" />
+        <Compile Include="..\prmToolkit.NotificationPattern\Notifiable.cs" Link="Notifiable.cs" />
+        <Compile Include="..\prmToolkit.NotificationPattern\Notification.cs" Link="Notification.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Include="..\prmToolkit.NotificationPattern\Resources\Message.en-US.Designer.cs" Link="Resources\Message.en-US.Designer.cs">
+            <DependentUpon>Message.en-US.resx</DependentUpon>
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+        </Compile>
+        <Compile Include="..\prmToolkit.NotificationPattern\Resources\Message.Designer.cs" Link="Resources\Message.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>Message.resx</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="..\prmToolkit.NotificationPattern\Resources\Message.en-US.resx" Link="Resources\Message.en-US.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Message.en-US.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+        <EmbeddedResource Include="..\prmToolkit.NotificationPattern\Resources\Message.resx" Link="Resources\Message.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Message.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Extensions\" />
+        <Folder Include="Resources\" />
+    </ItemGroup>
+
+</Project>

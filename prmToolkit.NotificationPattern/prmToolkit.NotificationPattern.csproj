@@ -4,6 +4,92 @@
         <TargetFramework>netstandard1.0</TargetFramework>
         <RootNamespace>prmToolkit.NotificationPattern</RootNamespace>
         <AssemblyName>prmToolkit.NotificationPattern</AssemblyName>
+        <Version>1.0.15</Version>
+        <Authors>paulorogerio</Authors>
+        <Company>Paulo Rogério Martins Marques</Company>
+        <Product>product</Product>
+        <Description>prmToolkit.NotificationPattern é uma classe que nos permite adicionar notificações para nossas entidades, objetos de valor, serviços e etc.
+
+
+O foco deste framework é permitir que trabalhe com notificações ao invés de exceções, podendo assim transportar suas notificações de uma camada mais abaixo, até outras camadas mais acima.
+
+
+Suporte para mensagens padrão nos idiomas
+
+- pt-BR
+
+- en-US
+
+
+Metodos de validação:
+
+
+- IfNullOrEmpty
+
+- IfNullOrWhiteSpace
+
+- IfNotNull
+
+- IfLowerThen
+
+- IfGreaterThan
+
+- IfLengthNoEqual
+
+- IfNotEmail
+
+- IfNotUrl
+
+- IfGreaterOrEqualsThan
+
+- IfLowerOrEqualsThan
+
+- IfNotRange
+
+- IfRange
+
+- IfNotContains
+
+- IfContains
+
+- IfNotAreEquals
+
+- IfAreEquals
+
+- IfTrue
+
+- IfFalse
+
+- IfNotCpf
+
+- IfNotCnpj
+
+- IfNotGuid
+
+- IfCollectionIsNull
+
+- IfCollectionIsNullOrEmpty
+
+- IfEqualsZero
+
+- IfNull
+
+- IfNotNull
+
+- IfNotNullOrEmpty
+
+- IfNotDate
+
+- IfNullOrOrInvalidLength
+
+- IfLengthGreaterThan
+
+- IfLengthLowerThan</Description>
+        <PackageIconUrl>http://0.gravatar.com/avatar/0b6442b3dc111885b6f0b54d6083e952?s=100&amp;d=mm&amp;r=g</PackageIconUrl>
+        <PackageProjectUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</RepositoryUrl>
+        <PackageTags>notification pattern fluent validation valid prmToolkit webapi paulorogerio</PackageTags>
+        <PackageReleaseNotes>Migração do projeto para o target netstandard 1.0</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.ComponentModel;
 
 namespace prmToolkit.NotificationPattern
 {
@@ -47,7 +45,8 @@ namespace prmToolkit.NotificationPattern
         /// <param name="objects">Objetos notificáveis</param>
         public void AddNotifications(params Notifiable[] objects)
         {
-            objects.ToList().ForEach(x => _notifications.AddRange(x.Notifications));
+            foreach (var notifiable in objects)
+                _notifications.AddRange(notifiable.Notifications);
         }
 
         /// <summary>
@@ -56,7 +55,9 @@ namespace prmToolkit.NotificationPattern
         /// <param name="objects">Objetos notificáveis</param>
         public void AddNotifications(params IEnumerable<Notifiable>[] objects)
         {
-            objects.ToList().ForEach(x => x.ToList().ForEach(n => _notifications.AddRange(n.Notifications)));
+            foreach (var notifiables in objects)
+                foreach (var notifiable in notifiables)
+                    _notifications.AddRange(notifiable.Notifications);
         }
 
         /// <summary>

@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\prmToolkit.NotificationPattern\prmToolkit.NotificationPattern.csproj">
-      <Project>{cc15a95c-9c56-46ae-ab41-548168d6cdef}</Project>
+      <Project>{9892ce19-3ce8-41c1-b86a-03ab0b4439d8}</Project>
       <Name>prmToolkit.NotificationPattern</Name>
     </ProjectReference>
   </ItemGroup>

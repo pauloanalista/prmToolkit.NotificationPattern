@@ -10,6 +10,7 @@
 
 namespace prmToolkit.NotificationPattern.Resources {
     using System;
+    using System.Reflection;
     
     
     /// <summary>
@@ -22,7 +23,7 @@ namespace prmToolkit.NotificationPattern.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Message {
+    public class Message {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +37,10 @@ namespace prmToolkit.NotificationPattern.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("prmToolkit.NotificationPattern.Resources.Message", typeof(Message).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("prmToolkit.NotificationPattern.Resources.Message", typeof(Message).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +52,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +64,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} não deve ser igual a {1}..
         /// </summary>
-        internal static string IfAreEquals {
+        public static string IfAreEquals {
             get {
                 return ResourceManager.GetString("IfAreEquals", resourceCulture);
             }
@@ -72,7 +73,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ter uma instância para uma coleção..
         /// </summary>
-        internal static string IfCollectionIsNull {
+        public static string IfCollectionIsNull {
             get {
                 return ResourceManager.GetString("IfCollectionIsNull", resourceCulture);
             }
@@ -81,7 +82,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser uma coleção com pelo menos um item dentro.
         /// </summary>
-        internal static string IfCollectionIsNullOrEmpty {
+        public static string IfCollectionIsNullOrEmpty {
             get {
                 return ResourceManager.GetString("IfCollectionIsNullOrEmpty", resourceCulture);
             }
@@ -90,7 +91,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} não deve conter {1}..
         /// </summary>
-        internal static string IfContains {
+        public static string IfContains {
             get {
                 return ResourceManager.GetString("IfContains", resourceCulture);
             }
@@ -99,7 +100,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} não deve ser igual a zero..
         /// </summary>
-        internal static string IfEqualsZero {
+        public static string IfEqualsZero {
             get {
                 return ResourceManager.GetString("IfEqualsZero", resourceCulture);
             }
@@ -108,7 +109,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser verdadeiro..
         /// </summary>
-        internal static string IfFalse {
+        public static string IfFalse {
             get {
                 return ResourceManager.GetString("IfFalse", resourceCulture);
             }
@@ -117,7 +118,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser menor que {1}..
         /// </summary>
-        internal static string IfGreaterOrEqualsThan {
+        public static string IfGreaterOrEqualsThan {
             get {
                 return ResourceManager.GetString("IfGreaterOrEqualsThan", resourceCulture);
             }
@@ -126,7 +127,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser menor ou igual a {1}..
         /// </summary>
-        internal static string IfGreaterThan {
+        public static string IfGreaterThan {
             get {
                 return ResourceManager.GetString("IfGreaterThan", resourceCulture);
             }
@@ -135,7 +136,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ter seu comprimento menor ou igual a {1} caracter(es)..
         /// </summary>
-        internal static string IfLengthGreaterThan {
+        public static string IfLengthGreaterThan {
             get {
                 return ResourceManager.GetString("IfLengthGreaterThan", resourceCulture);
             }
@@ -144,7 +145,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ter seu comprimento maior ou igual a {1} caracter(es)..
         /// </summary>
-        internal static string IfLengthLowerThan {
+        public static string IfLengthLowerThan {
             get {
                 return ResourceManager.GetString("IfLengthLowerThan", resourceCulture);
             }
@@ -153,7 +154,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ter exatamente {1} caracter(es)..
         /// </summary>
-        internal static string IfLengthNoEqual {
+        public static string IfLengthNoEqual {
             get {
                 return ResourceManager.GetString("IfLengthNoEqual", resourceCulture);
             }
@@ -162,7 +163,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser maior que {1}..
         /// </summary>
-        internal static string IfLowerOrEqualsThan {
+        public static string IfLowerOrEqualsThan {
             get {
                 return ResourceManager.GetString("IfLowerOrEqualsThan", resourceCulture);
             }
@@ -171,7 +172,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser maior ou igual a {1}..
         /// </summary>
-        internal static string IfLowerThan {
+        public static string IfLowerThan {
             get {
                 return ResourceManager.GetString("IfLowerThan", resourceCulture);
             }
@@ -180,7 +181,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser igual a {1}..
         /// </summary>
-        internal static string IfNotAreEquals {
+        public static string IfNotAreEquals {
             get {
                 return ResourceManager.GetString("IfNotAreEquals", resourceCulture);
             }
@@ -189,7 +190,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser um Cnpj válido..
         /// </summary>
-        internal static string IfNotCnpj {
+        public static string IfNotCnpj {
             get {
                 return ResourceManager.GetString("IfNotCnpj", resourceCulture);
             }
@@ -198,7 +199,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve conter {1}..
         /// </summary>
-        internal static string IfNotContains {
+        public static string IfNotContains {
             get {
                 return ResourceManager.GetString("IfNotContains", resourceCulture);
             }
@@ -207,7 +208,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser um Cpf válido..
         /// </summary>
-        internal static string IfNotCpf {
+        public static string IfNotCpf {
             get {
                 return ResourceManager.GetString("IfNotCpf", resourceCulture);
             }
@@ -216,7 +217,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser uma data válida..
         /// </summary>
-        internal static string IfNotDate {
+        public static string IfNotDate {
             get {
                 return ResourceManager.GetString("IfNotDate", resourceCulture);
             }
@@ -225,7 +226,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser um endereço de e-mail válido..
         /// </summary>
-        internal static string IfNotEmail {
+        public static string IfNotEmail {
             get {
                 return ResourceManager.GetString("IfNotEmail", resourceCulture);
             }
@@ -234,7 +235,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser um Guid válido..
         /// </summary>
-        internal static string IfNotGuid {
+        public static string IfNotGuid {
             get {
                 return ResourceManager.GetString("IfNotGuid", resourceCulture);
             }
@@ -243,7 +244,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser igual a nulo..
         /// </summary>
-        internal static string IfNotNull {
+        public static string IfNotNull {
             get {
                 return ResourceManager.GetString("IfNotNull", resourceCulture);
             }
@@ -252,7 +253,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser nulo..
         /// </summary>
-        internal static string IfNotNullOrEmpty {
+        public static string IfNotNullOrEmpty {
             get {
                 return ResourceManager.GetString("IfNotNullOrEmpty", resourceCulture);
             }
@@ -261,7 +262,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve estar no intervalo de {1} a {2}..
         /// </summary>
-        internal static string IfNotRange {
+        public static string IfNotRange {
             get {
                 return ResourceManager.GetString("IfNotRange", resourceCulture);
             }
@@ -270,7 +271,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser uma URL válida..
         /// </summary>
-        internal static string IfNotUrl {
+        public static string IfNotUrl {
             get {
                 return ResourceManager.GetString("IfNotUrl", resourceCulture);
             }
@@ -279,7 +280,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} não deve ser igual a nulo..
         /// </summary>
-        internal static string IfNull {
+        public static string IfNull {
             get {
                 return ResourceManager.GetString("IfNull", resourceCulture);
             }
@@ -288,7 +289,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} é obrigatório..
         /// </summary>
-        internal static string IfNullOrEmpty {
+        public static string IfNullOrEmpty {
             get {
                 return ResourceManager.GetString("IfNullOrEmpty", resourceCulture);
             }
@@ -297,7 +298,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} é obrigatório e deve conter entre {1} e {2} caracteres..
         /// </summary>
-        internal static string IfNullOrInvalidLength {
+        public static string IfNullOrInvalidLength {
             get {
                 return ResourceManager.GetString("IfNullOrInvalidLength", resourceCulture);
             }
@@ -306,7 +307,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} é obrigatório..
         /// </summary>
-        internal static string IfNullOrWhiteSpace {
+        public static string IfNullOrWhiteSpace {
             get {
                 return ResourceManager.GetString("IfNullOrWhiteSpace", resourceCulture);
             }
@@ -315,7 +316,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} não deve estar no intervalo de {1} a {2}..
         /// </summary>
-        internal static string IfRange {
+        public static string IfRange {
             get {
                 return ResourceManager.GetString("IfRange", resourceCulture);
             }
@@ -324,7 +325,7 @@ namespace prmToolkit.NotificationPattern.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser falso..
         /// </summary>
-        internal static string IfTrue {
+        public static string IfTrue {
             get {
                 return ResourceManager.GetString("IfTrue", resourceCulture);
             }

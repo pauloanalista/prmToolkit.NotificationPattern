@@ -1,7 +1,7 @@
 # prmToolkit
 
 # NotificationPattern
-NotificationPattern é uma classe que nos permite adicionar notificações para qualquer objeto. Ex: Entidades, objetos de valor e etc.
+NotificationPattern é uma classe que nos permite adicionar notificações para qualquer objeto. Ex: Entidades, objetos de valor, serviços  e etc.
 
 ### Installation - ArgumentsValidator
 
@@ -11,7 +11,6 @@ Para adicionar somente a referencia a dll
 ```sh
 Install-Package prmToolkit.NotificationPattern
 ```
-
 ### Exemplo de como usar
 Atualmente as mensagens das notificações tem suporte aos idiomas pt-BR e en-US.
 Caso não defina o idioma que quer usar ele irá se basear no idioma local, caso não exista suporte ele assumira o pt-BR.

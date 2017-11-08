@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace prmToolkit.NotificationPattern
 {
@@ -98,5 +99,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <returns>Retornar true quando o objeto é valido, ou seja, não possui notificações.</returns>
         public bool IsValid() => _notifications.Count == 0;
+
+        public bool IsInvalid() => _notifications.Any();
     }
 }

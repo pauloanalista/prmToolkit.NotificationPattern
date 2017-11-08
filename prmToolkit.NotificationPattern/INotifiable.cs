@@ -48,6 +48,12 @@ namespace prmToolkit.NotificationPattern
         bool IsValid();
 
         /// <summary>
+        /// Verifica se existe notificações para o objeto, tornando o objeto em inválido
+        /// </summary>
+        /// <returns></returns>
+        bool IsInvalid();
+
+        /// <summary>
         /// Limpa todas as notificações do objeto
         /// </summary>
         void ClearNotifications();

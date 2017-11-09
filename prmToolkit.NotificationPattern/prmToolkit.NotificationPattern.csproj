@@ -4,7 +4,7 @@
         <TargetFramework>netstandard1.0</TargetFramework>
         <RootNamespace>prmToolkit.NotificationPattern</RootNamespace>
         <AssemblyName>prmToolkit.NotificationPattern</AssemblyName>
-        <Version>1.0.15</Version>
+        <Version>1.0.17</Version>
         <Authors>paulorogerio</Authors>
         <Company>Paulo Rogério Martins Marques</Company>
         <Product>product</Product>
@@ -89,7 +89,8 @@ Metodos de validação:
         <PackageProjectUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</PackageProjectUrl>
         <RepositoryUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</RepositoryUrl>
         <PackageTags>notification pattern fluent validation valid prmToolkit webapi paulorogerio</PackageTags>
-        <PackageReleaseNotes>Migração do projeto para o target netstandard 1.0</PackageReleaseNotes>
+        <PackageReleaseNotes>Ajustes nos comentários e uma pequena correção no método IfLengthNoEqual</PackageReleaseNotes>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>

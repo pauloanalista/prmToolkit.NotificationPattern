@@ -23,7 +23,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se for nula ou vazia</returns>
         public AddNotifications<T> IfNullOrEmpty(Expression<Func<T, string>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -40,7 +40,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se for nula ou vazia ou com espaços em branco</returns>
         public AddNotifications<T> IfNullOrWhiteSpace(Expression<Func<T, string>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -57,7 +57,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se não for nula</returns>
         public AddNotifications<T> IfNotNullOrEmpty(Expression<Func<T, string>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -75,7 +75,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se for nula ou vazia ou com espaços em branco ou seu tamanho seja invalido</returns>
         [Obsolete("Método obsoleto, por favor utilize o método IfNullOrInvalidLength")]
         public AddNotifications<T> IfNullOrEmptyOrInvalidLength(Expression<Func<T, string>> selector, int min, int max, string message = "")
         {
@@ -93,7 +93,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se for nula ou vazia ou com espaços em branco ou seu tamanho seja invalido</returns>
         public AddNotifications<T> IfNullOrInvalidLength(Expression<Func<T, string>> selector, int min, int max, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -112,7 +112,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se seu comprimento for menor que o parâmetro min</returns>
         public AddNotifications<T> IfLengthLowerThan(Expression<Func<T, string>> selector, int min, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -131,7 +131,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se seu valor for menor que o parâmetro min</returns>
         public AddNotifications<T> IfLowerThan(Expression<Func<T, int>> selector, int min, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -149,7 +149,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um float, adicione uma notificação se seu valor for menor que o parâmetro min</returns>
         public AddNotifications<T> IfLowerThan(Expression<Func<T, float>> selector, float min, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -167,7 +167,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um double, adicione uma notificação se seu valor for menor que o parâmetro min</returns>
         public AddNotifications<T> IfLowerThan(Expression<Func<T, double>> selector, double min, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -185,7 +185,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se seu valor for menor que o parâmetro min</returns>
         public AddNotifications<T> IfLowerThan(Expression<Func<T, decimal>> selector, decimal min, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -203,7 +203,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um DateTime, adicione uma notificação se seu valor for menor que o parâmetro min</returns>
         public AddNotifications<T> IfLowerThan(Expression<Func<T, DateTime>> selector, DateTime min, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -223,7 +223,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um int, adicione uma notificação se seu valor for maior que o parâmetro max</returns>
         public AddNotifications<T> IfGreaterThan(Expression<Func<T, int>> selector, int max, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -241,7 +241,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um double, adicione uma notificação se seu valor for maior que o parâmetro max</returns>
         public AddNotifications<T> IfGreaterThan(Expression<Func<T, double>> selector, double max, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -259,7 +259,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um float, adicione uma notificação se seu valor for maior que o parâmetro max</returns>
         public AddNotifications<T> IfGreaterThan(Expression<Func<T, float>> selector, float max, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -277,7 +277,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um decimal, adicione uma notificação se seu valor for maior que o parâmetro max</returns>
         public AddNotifications<T> IfGreaterThan(Expression<Func<T, decimal>> selector, decimal max, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -295,7 +295,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um DateTime, adicione uma notificação se seu valor for maior que o parâmetro max</returns>
         public AddNotifications<T> IfGreaterThan(Expression<Func<T, DateTime>> selector, DateTime max, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -314,7 +314,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="min">Minimum Length</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se seu comprimento for maior que o parâmetro max</returns>
         public AddNotifications<T> IfLengthGreaterThan(Expression<Func<T, string>> selector, int max, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -332,13 +332,13 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="length">Especific Length</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se seu comprimento for diferente do parâmetro length</returns>
         public AddNotifications<T> IfLengthNoEqual(Expression<Func<T, string>> selector, int length, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
             var name = ((MemberExpression)selector.Body).Member.Name;
 
-            if (!string.IsNullOrEmpty(val) && val.Length != length)
+            if (string.IsNullOrEmpty(val) || val.Length != length)
                 _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfLengthNoEqual.ToFormat(name, length) : message);
 
             return this;
@@ -349,7 +349,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se não for um endereço de e-mail válido</returns>
         public AddNotifications<T> IfNotEmail(Expression<Func<T, string>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -366,7 +366,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se não for um URL válida</returns>
         public AddNotifications<T> IfNotUrl(Expression<Func<T, string>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -385,7 +385,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="number">Number to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se for maior ou igual ao parametro passado</returns>
         public AddNotifications<T> IfGreaterOrEqualsThan(Expression<Func<T, int>> selector, int number, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -403,7 +403,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="number">Number to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se for maior ou igual ao parametro passado</returns>
         public AddNotifications<T> IfGreaterOrEqualsThan(Expression<Func<T, decimal>> selector, decimal number, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -421,7 +421,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="number">Number to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se for maior ou igual ao parametro passado</returns>
         public AddNotifications<T> IfGreaterOrEqualsThan(Expression<Func<T, double>> selector, double number, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -439,7 +439,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="number">Number to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se for maior ou igual ao parametro passado</returns>
         public AddNotifications<T> IfGreaterOrEqualsThan(Expression<Func<T, float>> selector, float number, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -457,7 +457,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="number">Number to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se for maior ou igual ao parametro passado</returns>
         public AddNotifications<T> IfGreaterOrEqualsThan(Expression<Func<T, DateTime>> selector, DateTime date, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -478,7 +478,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="number">Number to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se for menor ou igual ao parametro passado</returns>
         public AddNotifications<T> IfLowerOrEqualsThan(Expression<Func<T, int>> selector, int number, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -496,7 +496,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="number">Number to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se for menor ou igual ao parametro passado</returns>
         public AddNotifications<T> IfLowerOrEqualsThan(Expression<Func<T, decimal>> selector, decimal number, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -514,7 +514,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="number">Number to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se for menor ou igual ao parametro passado</returns>
         public AddNotifications<T> IfLowerOrEqualsThan(Expression<Func<T, double>> selector, double number, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -532,7 +532,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="number">Number to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se for menor ou igual ao parametro passado</returns>
         public AddNotifications<T> IfLowerOrEqualsThan(Expression<Func<T, float>> selector, float number, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -550,7 +550,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="number">Number to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se for menor ou igual ao parametro passado</returns>
         public AddNotifications<T> IfLowerOrEqualsThan(Expression<Func<T, DateTime>> selector, DateTime date, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -572,7 +572,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="a">Lower value</param>
         /// <param name="b">Higher value</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se não estiver entre alguns dois valores</returns>
         public AddNotifications<T> IfNotRange(Expression<Func<T, int>> selector, int a, int b, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -591,7 +591,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="a">Lower value</param>
         /// <param name="b">Higher value</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se não estiver entre alguns dois valores</returns>
         public AddNotifications<T> IfNotRange(Expression<Func<T, decimal>> selector, decimal a, decimal b, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -610,7 +610,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="a">Lower value</param>
         /// <param name="b">Higher value</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se não estiver entre alguns dois valores</returns>
         public AddNotifications<T> IfNotRange(Expression<Func<T, double>> selector, double a, double b, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -629,7 +629,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="a">Lower value</param>
         /// <param name="b">Higher value</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se não estiver entre alguns dois valores</returns>
         public AddNotifications<T> IfNotRange(Expression<Func<T, float>> selector, float a, float b, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -648,7 +648,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="a">Lower value</param>
         /// <param name="b">Higher value</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se não estiver entre alguns dois valores</returns>
         public AddNotifications<T> IfNotRange(Expression<Func<T, DateTime>> selector, DateTime a, DateTime b, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -670,7 +670,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="a">Lower value</param>
         /// <param name="b">Higher value</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se estiver entre alguns dois valores</returns>
         public AddNotifications<T> IfRange(Expression<Func<T, int>> selector, int a, int b, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -689,7 +689,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="a">Lower value</param>
         /// <param name="b">Higher value</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se estiver entre alguns dois valores</returns>
         public AddNotifications<T> IfRange(Expression<Func<T, decimal>> selector, decimal a, decimal b, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -708,7 +708,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="a">Lower value</param>
         /// <param name="b">Higher value</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se estiver entre alguns dois valores</returns>
         public AddNotifications<T> IfRange(Expression<Func<T, double>> selector, double a, double b, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -727,7 +727,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="a">Lower value</param>
         /// <param name="b">Higher value</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se estiver entre alguns dois valores</returns>
         public AddNotifications<T> IfRange(Expression<Func<T, float>> selector, float a, float b, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -746,7 +746,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="a">Lower value</param>
         /// <param name="b">Higher value</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dado um int, adicione uma notificação se estiver entre alguns dois valores</returns>
         public AddNotifications<T> IfRange(Expression<Func<T, DateTime>> selector, DateTime a, DateTime b, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -767,13 +767,13 @@ namespace prmToolkit.NotificationPattern
         /// <param name="a">Lower value</param>
         /// <param name="b">Higher value</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se ela não contiver um texto</returns>
         public AddNotifications<T> IfNotContains(Expression<Func<T, string>> selector, string text, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
             var name = ((MemberExpression)selector.Body).Member.Name;
 
-            if (!val.Contains(text))
+            if (val == null || !val.Contains(text))
                 _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotContains.ToFormat(name, text) : message);
 
             return this;
@@ -786,7 +786,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="a">Lower value</param>
         /// <param name="b">Higher value</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se ela contiver um texto</returns>
         public AddNotifications<T> IfContains(Expression<Func<T, string>> selector, string text, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -805,7 +805,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se não for igual a</returns>
         public AddNotifications<T> IfNotAreEquals(Expression<Func<T, string>> selector, string text, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -823,7 +823,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se não for igual a</returns>
         public AddNotifications<T> IfNotAreEquals(Expression<Func<T, int>> selector, int value, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -841,7 +841,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se não for igual a</returns>
         public AddNotifications<T> IfNotAreEquals(Expression<Func<T, double>> selector, double value, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -859,7 +859,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se não for igual a</returns>
         public AddNotifications<T> IfNotAreEquals(Expression<Func<T, float>> selector, float value, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -877,7 +877,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se não for igual a</returns>
         public AddNotifications<T> IfNotAreEquals(Expression<Func<T, decimal>> selector, decimal value, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -895,7 +895,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se não for igual a</returns>
         public AddNotifications<T> IfNotAreEquals(Expression<Func<T, DateTime>> selector, DateTime value, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -916,7 +916,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se for igual a</returns>
         public AddNotifications<T> IfAreEquals(Expression<Func<T, string>> selector, string text, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -934,7 +934,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se for igual a</returns>
         public AddNotifications<T> IfAreEquals(Expression<Func<T, int>> selector, int value, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -952,7 +952,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se for igual a</returns>
         public AddNotifications<T> IfAreEquals(Expression<Func<T, double>> selector, double value, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -965,12 +965,12 @@ namespace prmToolkit.NotificationPattern
         }
 
         /// <summary>
-        /// Dada uma string, adicione uma notificação se for igual a
+        /// Dada uma string, adicione uma notificação se for igual
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se for igual</returns>
         public AddNotifications<T> IfAreEquals(Expression<Func<T, float>> selector, float value, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -983,12 +983,12 @@ namespace prmToolkit.NotificationPattern
         }
 
         /// <summary>
-        /// Dada uma string, adicione uma notificação se for igual a
+        /// Dada uma string, adicione uma notificação se for igual
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se for igual</returns>
         public AddNotifications<T> IfAreEquals(Expression<Func<T, decimal>> selector, decimal value, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1001,12 +1001,12 @@ namespace prmToolkit.NotificationPattern
         }
 
         /// <summary>
-        /// Dada uma string, adicione uma notificação se for igual a
+        /// Dada uma string, adicione uma notificação se for igual
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se for igual a</returns>
         public AddNotifications<T> IfAreEquals(Expression<Func<T, DateTime>> selector, DateTime value, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1024,7 +1024,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma bool, adicione uma notificação se for verdadeira</returns>
         public AddNotifications<T> IfTrue(Expression<Func<T, bool>> selector, string message = "")
         {
             var data = selector.Compile().Invoke(_validatable);
@@ -1041,7 +1041,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma bool, adicione uma notificação se for falso</returns>
         public AddNotifications<T> IfFalse(Expression<Func<T, bool>> selector, string message = "")
         {
             var data = selector.Compile().Invoke(_validatable);
@@ -1058,7 +1058,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se não for um cpf válido</returns>
         public AddNotifications<T> IfNotCpf(Expression<Func<T, string>> selector, string message = "")
         {
             var cpf = selector.Compile().Invoke(_validatable);
@@ -1124,7 +1124,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se não for um Cnpj válido</returns>
         public AddNotifications<T> IfNotCnpj(Expression<Func<T, string>> selector, string message = "")
         {
             var cnpj = selector.Compile().Invoke(_validatable);
@@ -1185,7 +1185,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se não for Guid</returns>
         public AddNotifications<T> IfNotGuid(Expression<Func<T, string>> selector, string message = "")
         {
             var data = selector.Compile().Invoke(_validatable);
@@ -1205,7 +1205,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma coleção, adicione uma notificação se for nula</returns>
         public AddNotifications<T> IfCollectionIsNull(Expression<Func<T, IEnumerable>> selector, string message = "")
         {
             IEnumerable colectionValue = selector.Compile().Invoke(_validatable);
@@ -1225,7 +1225,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma coleção, adicione uma notificação se for nula ou não tenha itens</returns>
         public AddNotifications<T> IfCollectionIsNullOrEmpty(Expression<Func<T, IEnumerable<T>>> selector, string message = "")
         {
             IEnumerable<T> colectionValue = selector.Compile().Invoke(_validatable);
@@ -1246,7 +1246,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um int, adicione uma notificação se for igual a zero</returns>
         public AddNotifications<T> IfEqualsZero(Expression<Func<T, int>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1265,7 +1265,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto, adicione uma notificação se for igual null</returns>
         public AddNotifications<T> IfNull(Expression<Func<T, object>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1283,7 +1283,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto int, adicione uma notificação se for igual null</returns>
         public AddNotifications<T> IfNull(Expression<Func<T, int?>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1301,7 +1301,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto double, adicione uma notificação se for igual null</returns>
         public AddNotifications<T> IfNull(Expression<Func<T, double?>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1319,7 +1319,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto float, adicione uma notificação se for igual null</returns>
         public AddNotifications<T> IfNull(Expression<Func<T, float?>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1337,7 +1337,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto decimal, adicione uma notificação se for igual null</returns>
         public AddNotifications<T> IfNull(Expression<Func<T, decimal?>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1355,7 +1355,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto de data, adicione uma notificação se for igual null</returns>
         public AddNotifications<T> IfNull(Expression<Func<T, DateTime>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1373,7 +1373,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto de data, adicione uma notificação se for igual null</returns>
         public AddNotifications<T> IfNull(Expression<Func<T, DateTime?>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1393,7 +1393,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto, adicione uma notificação se não for igual null</returns>
         public AddNotifications<T> IfNotNull(Expression<Func<T, object>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1410,7 +1410,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto int, adicione uma notificação se não for igual null</returns>
         public AddNotifications<T> IfNotNull(Expression<Func<T, int?>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1428,7 +1428,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto float, adicione uma notificação se não for igual null</returns>
         public AddNotifications<T> IfNotNull(Expression<Func<T, float?>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1446,7 +1446,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto double, adicione uma notificação se não for igual null</returns>
         public AddNotifications<T> IfNotNull(Expression<Func<T, double?>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1464,7 +1464,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto decimal, adicione uma notificação se não for igual null</returns>
         public AddNotifications<T> IfNotNull(Expression<Func<T, decimal?>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1482,7 +1482,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto de data, adicione uma notificação se não for igual null</returns>
         public AddNotifications<T> IfNotNull(Expression<Func<T, DateTime>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1500,7 +1500,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="val">Value to be compared</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada um objeto de data, adicione uma notificação se não for igual null</returns>
         public AddNotifications<T> IfNotNull(Expression<Func<T, DateTime?>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);
@@ -1518,7 +1518,7 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
-        /// <returns></returns>
+        /// <returns>Dada uma string, adicione uma notificação se não for uma data válida</returns>
         public AddNotifications<T> IfNotDate(Expression<Func<T, string>> selector, string message = "")
         {
             var val = selector.Compile().Invoke(_validatable);

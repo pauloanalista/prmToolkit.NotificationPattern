@@ -79,8 +79,8 @@ namespace prmToolkit.NotificationPattern.Tests
         [TestCategory("NotificationPattern")]
         public void IfLengthNoEqual()
         {
-            _customer.Name = "abc";
-            new AddNotifications<Customer>(_customer).IfLengthNoEqual(x => x.Name, 10);
+            //_customer.Name = "abc";
+            new AddNotifications<Customer>(_customer).IfLengthNoEqual(x => x.Name, 3);
 
             Assert.AreEqual(false, _customer.IsValid());
         }

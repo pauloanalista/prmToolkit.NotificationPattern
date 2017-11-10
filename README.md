@@ -154,48 +154,70 @@ public AdicionarResponse Adicionar(AdicionarRequest request)
 
 ### Metodos de validação:
 
-- IfNullOrEmpty
+- IfNullOrEmpty 
 
-- IfNullOrWhiteSpace
+- IfNullOrWhiteSpace 
 
-- IfNotNull
+- IfNotNull 
 
-- IfNullOrEmptyOrInvalidLength
+- IfLowerThen 
 
-- IfLowerThen
+- IfGreaterThan 
 
-- IfGreaterThan
+- IfLengthNoEqual 
 
-- IfLengthNoEqual
+- IfNotEmail 
 
-- IfNotEmail
+- IfNotUrl 
 
-- IfNotUrl
+- IfGreaterOrEqualsThan 
 
-- IfGreaterOrEqualsThan
+- IfLowerOrEqualsThan 
 
-- IfLowerOrEqualsThan
+- IfNotRange 
 
-- IfNotRange
+- IfRange 
 
-- IfRange
+- IfNotContains 
 
-- IfNotContains
+- IfContains 
 
-- IfContains
+- IfNotAreEquals 
 
-- IfNotAreEquals
+- IfAreEquals 
 
-- IfAreEquals
+- IfTrue 
 
-- IfTrue
+- IfFalse 
 
-- IfFalse
+- IfNotCpf 
 
-- IfNotCpf
+- IfNotCnpj 
 
-- IfNotCnpj
+- IfNotGuid 
 
-- IfNotGuid
+- IfCollectionIsNull 
 
-- IfCollectionIsNull
+- IfCollectionIsNullOrEmpty 
+
+- IfEqualsZero 
+
+- IfNull 
+
+- IfNotNull 
+
+- IfNotNullOrEmpty 
+
+- IfNotDate 
+
+- IfNullOrOrInvalidLength 
+
+- IfLengthGreaterThan 
+
+- IfLengthLowerThan 
+
+- IsValid 
+
+- IsInvalid 
+
+- IfEnumInvalid

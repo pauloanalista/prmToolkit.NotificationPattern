@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace prmToolkit.NotificationPattern
@@ -1532,6 +1533,26 @@ namespace prmToolkit.NotificationPattern
             {
                 _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotDate.ToFormat(name) : message);
             }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Dado um Enum, adiciona notificação caso seu valor não esteja definido dentro do próprio Enum
+        /// </summary>
+        /// <param name="selector">Nome da propriedade que deseja testar</param>
+        /// <param name="message">Mensagem de erro (Opcional)</param>
+        /// <returns>Dado um Enum, adiciona notificação caso seu valor não esteja definido dentro do próprio Enum</returns>
+        public AddNotifications<T> IfEnumInvalid(Expression<Func<T, System.Enum>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_validatable);
+            var name = string.Empty;
+
+            var op = ((UnaryExpression)selector.Body).Operand;
+            name = ((MemberExpression)op).Member.Name;
+
+            if (!val.IsEnumValid())
+                _validatable.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfEnumInvalid.ToFormat(name) : message);
 
             return this;
         }

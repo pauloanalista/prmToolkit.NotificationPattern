@@ -129,6 +129,9 @@
   <data name="IfContains" xml:space="preserve">
     <value>O campo {0} não deve conter {1}.</value>
   </data>
+  <data name="IfEnumInvalid" xml:space="preserve">
+    <value>O campo {0} é inválido.</value>
+  </data>
   <data name="IfEqualsZero" xml:space="preserve">
     <value>O campo {0} não deve ser igual a zero.</value>
   </data>

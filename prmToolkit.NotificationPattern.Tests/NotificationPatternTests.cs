@@ -435,6 +435,17 @@ namespace prmToolkit.NotificationPattern.Tests
 
             Assert.AreEqual(false, _customer.IsValid());
         }
+
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
+        public void IfEnumInvalid()
+        {
+            EnumSexo sexo = (EnumSexo)0;
+            _customer.Sexo = sexo;
+            new AddNotifications<Customer>(_customer).IfEnumInvalid(x => x.Sexo);
+
+            Assert.AreEqual(false, _customer.IsValid());
+        }
     }
 
     public class Customer : Notifiable
@@ -457,5 +468,13 @@ namespace prmToolkit.NotificationPattern.Tests
         public IEnumerable<Customer> CustomersIEnumerable { get; set; }
         public ICollection<Customer> CustomersICollection { get; set; }
         public IList<Customer> CustomersIList { get; set; }
+
+        public EnumSexo Sexo { get; set; }
+    }
+
+    public enum EnumSexo
+    {
+        Masculino = 1,
+        Feminino = 2
     }
 }

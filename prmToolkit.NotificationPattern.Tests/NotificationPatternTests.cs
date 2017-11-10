@@ -446,6 +446,21 @@ namespace prmToolkit.NotificationPattern.Tests
 
             Assert.AreEqual(false, _customer.IsValid());
         }
+
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
+        public void AddNotificationIfNull()
+        {
+            Customer customer = new Customer();
+
+            InsertCustomerRequest request = new InsertCustomerRequest() {
+            Name = "", Age=36};
+
+            customer.InsertCustomer(request);
+
+            Assert.AreEqual(false, _customer.IsValid());
+        }
+
     }
 
     public class Customer : Notifiable
@@ -470,8 +485,24 @@ namespace prmToolkit.NotificationPattern.Tests
         public IList<Customer> CustomersIList { get; set; }
 
         public EnumSexo Sexo { get; set; }
+
+        public void InsertCustomer(InsertCustomerRequest request)
+        {
+            new AddNotifications<Customer>(this).IfNull(request, "request", "teste");
+            if (this.IsInvalid()) return;
+
+            new AddNotifications<Customer>(this).IfNullOrEmpty(request.Name, "Nome", "ssss")
+                .IfNullOrEmpty(X => X.Name)
+                .IfNullOrWhiteSpace(request.Name, "SSS", "SSS");
+                
+        }
     }
 
+    public class InsertCustomerRequest
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
     public enum EnumSexo
     {
         Masculino = 1,

@@ -12,12 +12,7 @@ namespace prmToolkit.NotificationPattern
 {
     public partial class AddNotifications<T> where T : Notifiable
     {
-        private readonly T _validatable;
 
-        public AddNotifications(T validatable)
-        {
-            _validatable = validatable;
-        }
-
+        
     }
 }

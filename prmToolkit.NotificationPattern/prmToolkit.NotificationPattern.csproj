@@ -94,6 +94,10 @@ Metodos de validação:
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="GeralAddNotifications.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
       <Compile Update="Resources\Message.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>

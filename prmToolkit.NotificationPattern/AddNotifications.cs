@@ -1,22 +1,19 @@
-﻿using prmToolkit.NotificationPattern.Extensions;
-using prmToolkit.NotificationPattern.Resources;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Text.RegularExpressions;
-
-namespace prmToolkit.NotificationPattern
+﻿namespace prmToolkit.NotificationPattern
 {
     public partial class AddNotifications<T> where T : Notifiable
     {
-        private readonly T _validatable;
+        /// <summary>
+        /// Objeto que receberá as notificações
+        /// </summary>
+        private readonly T _notifiableObject;
 
-        public AddNotifications(T validatable)
+        /// <summary>
+        /// Adiciona notificações a qualquer objeto que seja notificável, ou seja, que implemente a classe Notifiable
+        /// </summary>
+        /// <param name="notifiableObject">Informe o objeto que irá receber as notificações</param>
+        public AddNotifications(T notifiableObject)
         {
-            _validatable = validatable;
+            _notifiableObject = notifiableObject;
         }
 
     }

@@ -16,16 +16,24 @@ namespace prmToolkit.NotificationPattern.Tests
         [TestCategory("NotificationPattern")]
         public void IfNullOrEmpty()
         {
-            new AddNotifications<Customer>(_customer).IfNullOrEmpty(x => x.Name);
+            string vazio = string.Empty;
+            new AddNotifications<Customer>(_customer).IfNullOrEmpty(x => x.Name)
+                .IfNullOrEmpty(vazio, "Vazio");
+
             Assert.AreEqual(false, _customer.IsValid());
+            Assert.IsTrue(_customer.Notifications.Count() == 2);
         }
 
         [TestMethod]
         [TestCategory("NotificationPattern")]
         public void IfNullOrWhiteSpace()
         {
-            new AddNotifications<Customer>(_customer).IfNullOrWhiteSpace(x => x.Name);
+            new AddNotifications<Customer>(_customer)
+                .IfNullOrWhiteSpace(x => x.Name)
+                .IfNullOrWhiteSpace("", "Vazio");
+
             Assert.AreEqual(false, _customer.IsValid());
+            Assert.IsTrue(_customer.Notifications.Count() == 2);
         }
 
         [TestMethod]
@@ -33,8 +41,12 @@ namespace prmToolkit.NotificationPattern.Tests
         public void IfNotNullOrEmpty()
         {
             _customer.Name = "Paulo";
-            new AddNotifications<Customer>(_customer).IfNotNullOrEmpty(x => x.Name);
+            new AddNotifications<Customer>(_customer)
+                .IfNotNullOrEmpty(x => x.Name)
+                .IfNotNullOrEmpty("NaoVazio", "aaaa");
+
             Assert.AreEqual(false, _customer.IsValid());
+            Assert.IsTrue(_customer.Notifications.Count() == 2);
         }
 
         [TestMethod]
@@ -454,11 +466,11 @@ namespace prmToolkit.NotificationPattern.Tests
             Customer customer = new Customer();
 
             InsertCustomerRequest request = new InsertCustomerRequest() {
-            Name = "", Age=36};
+            Name = null, Age=36};
 
-            customer.InsertCustomer(request);
-
-            Assert.AreEqual(false, _customer.IsValid());
+            new AddNotifications<Customer>(customer).IfNull(request.Name, "Nome");
+            
+            Assert.IsTrue(customer.IsInvalid());
         }
 
     }
@@ -486,16 +498,7 @@ namespace prmToolkit.NotificationPattern.Tests
 
         public EnumSexo Sexo { get; set; }
 
-        public void InsertCustomer(InsertCustomerRequest request)
-        {
-            new AddNotifications<Customer>(this).IfNull(request, "request", "teste");
-            if (this.IsInvalid()) return;
-
-            new AddNotifications<Customer>(this).IfNullOrEmpty(request.Name, "Nome", "ssss")
-                .IfNullOrEmpty(X => X.Name)
-                .IfNullOrWhiteSpace(request.Name, "SSS", "SSS");
-                
-        }
+        
     }
 
     public class InsertCustomerRequest

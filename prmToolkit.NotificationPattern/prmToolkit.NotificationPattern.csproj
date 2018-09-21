@@ -4,11 +4,11 @@
         <TargetFramework>netstandard1.0</TargetFramework>
         <RootNamespace>prmToolkit.NotificationPattern</RootNamespace>
         <AssemblyName>prmToolkit.NotificationPattern</AssemblyName>
-        <Version>1.0.19</Version>
+        <Version>1.1.0</Version>
         <Authors>paulorogerio</Authors>
         <Company>Paulo Rogério Martins Marques</Company>
         <Product>product</Product>
-        <Description>prmToolkit.NotificationPattern é uma classe que nos permite adicionar notificações para nossas entidades, objetos de valor, serviços e etc.
+        <Description>prmToolkit.NotificationPattern é uma bblioteca que nos permite adicionar notificações em classes, seja ela uma entidade, objeto de valor, serviços e etc.
 
 
 O foco deste framework é permitir que trabalhe com notificações ao invés de exceções, podendo assim transportar suas notificações de uma camada mais abaixo, até outras camadas mais acima.
@@ -89,8 +89,8 @@ Metodos de validação:
         <PackageProjectUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</PackageProjectUrl>
         <RepositoryUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</RepositoryUrl>
         <PackageTags>notification pattern fluent validation valid prmToolkit webapi paulorogerio</PackageTags>
-        <PackageReleaseNotes>Ajustes nos comentários e uma pequena correção no método IfLengthNoEqual</PackageReleaseNotes>
-        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <PackageReleaseNotes>Nova classe chamada Response foi adiciona, essa classe facilita o retorno da informação de forma padronizada.</PackageReleaseNotes>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>

@@ -477,6 +477,10 @@ namespace prmToolkit.NotificationPattern.Tests
 
     public class Customer : Notifiable
     {
+        public Customer()
+        {
+            
+        }
         public string Name { get; set; }
 
         public int Age { get; set; }

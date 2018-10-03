@@ -98,12 +98,12 @@ namespace prmToolkit.NotificationPattern
         /// Verifica se o objeto notificável é valido
         /// </summary>
         /// <returns>Retornar true quando o objeto é valido, ou seja, não possui notificações.</returns>
-        public bool IsValid() => _notifications.Count == 0;
+        public bool IsValid() => _notifications == null || _notifications.Count == 0;
 
         /// <summary>
         /// Verifica se o objeto notificável é inválido
         /// </summary>
         /// <returns>Retornar true quando o objeto é inválido, ou seja, possui notificações.</returns>
-        public bool IsInvalid() => _notifications.Any();
+        public bool IsInvalid() => _notifications != null && _notifications.Any();
     }
 }

@@ -4,7 +4,7 @@
         <TargetFramework>netstandard1.0</TargetFramework>
         <RootNamespace>prmToolkit.NotificationPattern</RootNamespace>
         <AssemblyName>prmToolkit.NotificationPattern</AssemblyName>
-        <Version>1.1.0</Version>
+        <Version>1.1.1</Version>
         <Authors>paulorogerio</Authors>
         <Company>Paulo Rogério Martins Marques</Company>
         <Product>product</Product>
@@ -89,7 +89,7 @@ Metodos de validação:
         <PackageProjectUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</PackageProjectUrl>
         <RepositoryUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</RepositoryUrl>
         <PackageTags>notification pattern fluent validation valid prmToolkit webapi paulorogerio</PackageTags>
-        <PackageReleaseNotes>Nova classe chamada Response foi adiciona, essa classe facilita o retorno da informação de forma padronizada.</PackageReleaseNotes>
+        <PackageReleaseNotes>Ajuste no método IsValid e IsInvalid, ao mocar estava dando problemas</PackageReleaseNotes>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 

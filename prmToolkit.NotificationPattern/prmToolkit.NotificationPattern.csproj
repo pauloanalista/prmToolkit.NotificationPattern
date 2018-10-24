@@ -4,7 +4,7 @@
         <TargetFramework>netstandard1.0</TargetFramework>
         <RootNamespace>prmToolkit.NotificationPattern</RootNamespace>
         <AssemblyName>prmToolkit.NotificationPattern</AssemblyName>
-        <Version>1.1.1</Version>
+        <Version>1.1.2</Version>
         <Authors>paulorogerio</Authors>
         <Company>Paulo Rogério Martins Marques</Company>
         <Product>product</Product>
@@ -89,7 +89,9 @@ Metodos de validação:
         <PackageProjectUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</PackageProjectUrl>
         <RepositoryUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</RepositoryUrl>
         <PackageTags>notification pattern fluent validation valid prmToolkit webapi paulorogerio</PackageTags>
-        <PackageReleaseNotes>Ajuste no método IsValid e IsInvalid, ao mocar estava dando problemas</PackageReleaseNotes>
+        <PackageReleaseNotes>Adicionado o método IfNotMatch
+Dada uma string, adicione uma notificação o conteudo passado não for válido para a Regex determinada
+</PackageReleaseNotes>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 

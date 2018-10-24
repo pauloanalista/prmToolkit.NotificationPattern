@@ -9,7 +9,7 @@ namespace prmToolkit.NotificationPattern
     public partial class AddNotifications<T> where T : Notifiable
     {
         #region OBJETOS COMPLEXOS
-        
+
         /// <summary>
         /// Dada uma string, adicione uma notificação se for nula ou vazia
         /// </summary>
@@ -428,6 +428,26 @@ namespace prmToolkit.NotificationPattern
 
             return this;
         }
+
+        /// <summary>
+        /// Dada uma string, adicione uma notificação o conteudo passado não for válido para a Regex determinada
+        /// </summary>
+        /// <param name="val">Nome da propriedade que deseja testar</param>
+        /// <param name="regex">Regex pertinente para validação</param>
+        /// <param name="objectName">Nome da propriedade ou objeto que representa a informação</param>
+        /// <param name="message">Mensagem de erro (Opcional)</param>
+        /// <returns>Dada uma string, adicione uma notificação se não for um endereço de e-mail válido</returns>
+        public AddNotifications<T> IfNotMatch(Expression<Func<T, string>> selector, string regex, string message = "")
+        {
+            var val = selector.Compile().Invoke(_notifiableObject);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (!Regex.IsMatch((string)val, regex))
+                _notifiableObject.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotMatch.ToFormat(name) : message);
+
+            return this;
+        }
+
         #endregion
 
         #region OBJETOS SIMPLES
@@ -501,7 +521,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="objectName">Nome da propriedade ou objeto que representa a informação</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
         /// <returns>Dada uma string, adicione uma notificação se seu comprimento for menor que o parâmetro min</returns>
-        public AddNotifications<T> IfLengthLowerThan(string val, int min, string objectName , string message = "")
+        public AddNotifications<T> IfLengthLowerThan(string val, int min, string objectName, string message = "")
         {
             if (!string.IsNullOrEmpty((string)val) && val.Length < min)
                 _notifiableObject.AddNotification(objectName, string.IsNullOrEmpty(message) ? Message.IfLengthLowerThan.ToFormat(objectName, min) : message);
@@ -802,6 +822,22 @@ namespace prmToolkit.NotificationPattern
             return this;
         }
 
+
+        /// <summary>
+        /// Dada uma string, adicione uma notificação o conteudo passado não for válido para a Regex determinada
+        /// </summary>
+        /// <param name="val">Nome da propriedade que deseja testar</param>
+        /// <param name="regex">Regex pertinente para validação</param>
+        /// <param name="objectName">Nome da propriedade ou objeto que representa a informação</param>
+        /// <param name="message">Mensagem de erro (Opcional)</param>
+        /// <returns>Dada uma string, adicione uma notificação se não for um endereço de e-mail válido</returns>
+        public AddNotifications<T> IfNotMatch(string val, string regex, string objectName, string message = "")
+        {
+            if (!Regex.IsMatch((string)val, regex))
+                _notifiableObject.AddNotification(objectName, string.IsNullOrEmpty(message) ? Message.IfNotMatch.ToFormat(objectName) : message);
+
+            return this;
+        }
 
 
         #endregion

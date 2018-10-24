@@ -339,5 +339,15 @@ namespace prmToolkit.NotificationPattern.Resources {
                 return ResourceManager.GetString("IfTrue", resourceCulture);
             }
         }
+
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O campo {0} deve ser falso..
+        /// </summary>
+        public static string IfNotMatch {
+            get {
+                return ResourceManager.GetString("IfNotMatch", resourceCulture);
+            }
+        }
     }
 }

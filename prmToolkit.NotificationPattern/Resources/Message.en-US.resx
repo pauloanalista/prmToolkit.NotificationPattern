@@ -210,4 +210,7 @@
   <data name="IfTrue" xml:space="preserve">
     <value>Field {0} should be false.</value>
   </data>
+  <data name="IfNotMatch" xml:space="preserve">
+    <value>The value of field {0} is not valid.</value>
+  </data>
 </root>

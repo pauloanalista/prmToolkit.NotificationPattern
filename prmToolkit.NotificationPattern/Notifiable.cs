@@ -23,6 +23,17 @@ namespace prmToolkit.NotificationPattern
         }
 
         /// <summary>
+        /// Adiciona uma notificação
+        /// </summary>
+        /// <param name="property">Nome da propriedade que está sendo testada</param>
+        /// <param name="message">Mensagem personalizada</param>
+        /// <param name="parameters">Parametros que serão usados para sobrescrever a string</param>
+        public void AddNotification(string property, string message, params object[] parameters)
+        {
+            _notifications.Add(new Notification(property, string.Format(message, parameters)));
+        }
+
+        /// <summary>
         /// Adiciona uma notificação na classe principal
         /// </summary>
         /// <param name="notification">Objeto de notificação que deseja adicionar</param>

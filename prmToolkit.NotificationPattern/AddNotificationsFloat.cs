@@ -174,6 +174,24 @@ namespace prmToolkit.NotificationPattern
         }
 
         /// <summary>
+        /// Dada um float, adicione uma notificação se for igual a zero
+        /// </summary>
+        /// <param name="selector">Nome da propriedade que deseja testar</param>
+        /// <param name="val">Value to be compared</param>
+        /// <param name="message">Mensagem de erro (Opcional)</param>
+        /// <returns>Dada um float, adicione uma notificação se for igual a zero</returns>
+        public AddNotifications<T> IfEqualsZero(Expression<Func<T, float>> selector, string message = "")
+        {
+            var val = selector.Compile().Invoke(_notifiableObject);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (val == 0)
+                _notifiableObject.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfEqualsZero.ToFormat(name) : message);
+
+            return this;
+        }
+
+        /// <summary>
         /// Dada um objeto float, adicione uma notificação se não for igual null
         /// </summary>
         /// <param name="selector">Nome da propriedade que deseja testar</param>
@@ -320,6 +338,21 @@ namespace prmToolkit.NotificationPattern
         {
             if (val == value)
                 _notifiableObject.AddNotification(objectName, string.IsNullOrEmpty(message) ? Message.IfAreEquals.ToFormat(objectName, value) : message);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Dada um float, adicione uma notificação se for igual a zero
+        /// </summary>
+        /// <param name="val">Valor informado</param>
+        /// <param name="objectName">Nome da propriedade ou objeto que representa a informação</param>
+        /// <param name="message">Mensagem de erro (Opcional)</param>
+        /// <returns>Dada um float, adicione uma notificação se for igual a zero</returns>
+        public AddNotifications<T> IfEqualsZero(float val, string objectName, string message = "")
+        {
+            if (val == 0)
+                _notifiableObject.AddNotification(objectName, string.IsNullOrEmpty(message) ? Message.IfEqualsZero.ToFormat(objectName) : message);
 
             return this;
         }

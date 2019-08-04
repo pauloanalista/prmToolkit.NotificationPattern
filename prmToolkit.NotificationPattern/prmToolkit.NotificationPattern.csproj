@@ -4,12 +4,12 @@
         <TargetFramework>netstandard1.0</TargetFramework>
         <RootNamespace>prmToolkit.NotificationPattern</RootNamespace>
         <AssemblyName>prmToolkit.NotificationPattern</AssemblyName>
-        <Version>1.1.2</Version>
+        <Version>1.1.3</Version>
         <Authors>paulorogerio</Authors>
         <Company>Paulo Rogério Martins Marques</Company>
         <Product>product</Product>
-        <Description>prmToolkit.NotificationPattern é uma bblioteca que nos permite adicionar notificações em classes, seja ela uma entidade, objeto de valor, serviços e etc.
-
+        <Description>Biblioteca que permite adicionar notificações em classes, seja ela uma entidade, objeto de valor, serviços e etc.
+Tem suporte a idiomas e mensagens automaticas
 
 O foco deste framework é permitir que trabalhe com notificações ao invés de exceções, podendo assim transportar suas notificações de uma camada mais abaixo, até outras camadas mais acima.
 
@@ -89,8 +89,7 @@ Metodos de validação:
         <PackageProjectUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</PackageProjectUrl>
         <RepositoryUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</RepositoryUrl>
         <PackageTags>notification pattern fluent validation valid prmToolkit webapi paulorogerio</PackageTags>
-        <PackageReleaseNotes>Adicionado o método IfNotMatch
-Dada uma string, adicione uma notificação o conteudo passado não for válido para a Regex determinada
+        <PackageReleaseNotes>IfEqualsZero ganhou suporte ao tipo decimal e float
 </PackageReleaseNotes>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>

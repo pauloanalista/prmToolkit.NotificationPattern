@@ -382,14 +382,10 @@ namespace prmToolkit.NotificationPattern
             var val = selector.Compile().Invoke(_notifiableObject);
             var name = ((MemberExpression)selector.Body).Member.Name;
 
-            try
-            {
-                DateTime dt = DateTime.Parse(val);
-            }
-            catch
-            {
+            DateTime dt;
+
+            if (DateTime.TryParse(val, out dt) == false)
                 _notifiableObject.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNotDate.ToFormat(name) : message);
-            }
 
             return this;
         }
@@ -779,14 +775,10 @@ namespace prmToolkit.NotificationPattern
         /// <returns>Dada uma string, adicione uma notificação se não for uma data válida</returns>
         public AddNotifications<T> IfNotDate(string val, string objectName, string message = "")
         {
-            try
-            {
-                DateTime dt = DateTime.Parse((string)val);
-            }
-            catch
-            {
+            DateTime dt;
+
+            if (DateTime.TryParse(val, out dt) == false)
                 _notifiableObject.AddNotification(objectName, string.IsNullOrEmpty(message) ? Message.IfNotDate.ToFormat(objectName) : message);
-            }
 
             return this;
         }

@@ -11,6 +11,10 @@ Para adicionar somente a referencia a dll
 ```sh
 Install-Package prmToolkit.NotificationPattern
 ```
+| Package |  Version | Downloads |
+| ------- | ----- | ----- |
+| `Flunt.Extensions.AspNet` | [![NuGet](https://img.shields.io/nuget/v/prmToolkit.NotificationPattern.svg)](https://nuget.org/packages/prmToolkit.NotificationPattern) | [![Nuget](https://img.shields.io/nuget/dt/prmToolkit.NotificationPattern.svg)](https://nuget.org/packages/prmToolkit.NotificationPattern) |
+
 ### Exemplo de como usar
 Atualmente as mensagens das notificações tem suporte aos idiomas pt-BR e en-US.
 Caso não defina o idioma que quer usar ele irá se basear no idioma local, caso não exista suporte ele assumira o pt-BR.

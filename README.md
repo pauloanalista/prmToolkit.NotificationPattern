@@ -13,7 +13,7 @@ Install-Package prmToolkit.NotificationPattern
 ```
 | Package |  Version | Downloads |
 | ------- | ----- | ----- |
-| `Flunt.Extensions.AspNet` | [![NuGet](https://img.shields.io/nuget/v/prmToolkit.NotificationPattern.svg)](https://nuget.org/packages/prmToolkit.NotificationPattern) | [![Nuget](https://img.shields.io/nuget/dt/prmToolkit.NotificationPattern.svg)](https://nuget.org/packages/prmToolkit.NotificationPattern) |
+| `prmToolkit.NotificationPattern` | [![NuGet](https://img.shields.io/nuget/v/prmToolkit.NotificationPattern.svg)](https://nuget.org/packages/prmToolkit.NotificationPattern) | [![Nuget](https://img.shields.io/nuget/dt/prmToolkit.NotificationPattern.svg)](https://nuget.org/packages/prmToolkit.NotificationPattern) |
 
 ### Exemplo de como usar
 Atualmente as mensagens das notificações tem suporte aos idiomas pt-BR e en-US.

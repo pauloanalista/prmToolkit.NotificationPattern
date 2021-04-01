@@ -1,7 +1,7 @@
 # prmToolkit
 
 # NotificationPattern
-NotificationPattern é uma classe que nos permite adicionar notificações para qualquer objeto. Ex: Entidades, objetos de valor, serviços  e etc.
+NotificationPattern é uma classe que nos permite adicionar notificações para qualquer objeto. Ex: Entidades, objetos de valor, serviços e etc.
 
 ### Installation - ArgumentsValidator
 

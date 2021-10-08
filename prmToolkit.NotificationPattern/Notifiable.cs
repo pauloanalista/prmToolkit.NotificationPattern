@@ -62,6 +62,15 @@ namespace prmToolkit.NotificationPattern
         }
 
         /// <summary>
+        /// Adiciona notificações de uma coleção de objetos notificaveis na classe principal
+        /// </summary>
+        /// <param name="objects">Objetos notificáveis</param>
+        public void CopyNotifications(params Notifiable[] objects)
+        {
+            AddNotifications(objects);
+        }
+
+        /// <summary>
         /// Adiciona notificações de coleções de coleção de objetos notificaveis na classe principal
         /// </summary>
         /// <param name="objects">Objetos notificáveis</param>
@@ -70,6 +79,15 @@ namespace prmToolkit.NotificationPattern
             foreach (var notifiables in objects)
                 foreach (var notifiable in notifiables)
                     _notifications.AddRange(notifiable.Notifications);
+        }
+
+        /// <summary>
+        /// Adiciona notificações de coleções de coleção de objetos notificaveis na classe principal
+        /// </summary>
+        /// <param name="objects">Objetos notificáveis</param>
+        public void CopyNotifications(params IEnumerable<Notifiable>[] objects)
+        {
+            AddNotifications(objects);
         }
 
         /// <summary>

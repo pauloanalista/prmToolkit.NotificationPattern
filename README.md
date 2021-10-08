@@ -79,7 +79,11 @@ public class Pedido : Notifiable
         
         //Também é possível adicionar varios objetos notificaveis de uma so vez.
         //Ex:        
-        //AddNotifications(objetoNotificavel1, objetoNotificavel2, objetoNotificavel3);
+        AddNotifications(objetoNotificavel1, objetoNotificavel2, objetoNotificavel3);
+		
+		//Também podemos usar o método CopyNotifications
+        //Ex:        
+        CopyNotifications(objetoNotificavel1, objetoNotificavel2, objetoNotificavel3);
         
         if(item.IsValid()) //Se o item não tem notificações deixa continuar
         _items.Add(item);
@@ -158,6 +162,8 @@ public AdicionarResponse Adicionar(AdicionarRequest request)
 
 ### Metodos de validação:
 
+- IfRequired
+
 - IfNullOrEmpty 
 
 - IfNullOrWhiteSpace 
@@ -232,7 +238,6 @@ public AdicionarResponse Adicionar(AdicionarRequest request)
 - [Participe gratuitamente do grupo de estudo](https://olha.la/ilovecode-telegram)
 
 ## Cursos e Treinamentos
-- [Cursos Baratos](https://olha.la/udemy)
 - [Cursos Indicados](https://olha.la/cursos)
 
 ## Fique ligado, acesse!

@@ -4,87 +4,90 @@
         <TargetFramework>netstandard1.0</TargetFramework>
         <RootNamespace>prmToolkit.NotificationPattern</RootNamespace>
         <AssemblyName>prmToolkit.NotificationPattern</AssemblyName>
-        <Version>1.1.3</Version>
+        <Version>1.1.4</Version>
         <Authors>paulorogerio</Authors>
         <Company>Paulo Rogério Martins Marques</Company>
         <Product>product</Product>
-        <Description>Biblioteca que permite adicionar notificações em classes, seja ela uma entidade, objeto de valor, serviços e etc.
-Tem suporte a idiomas e mensagens automaticas
+        <Description>
+			Biblioteca que permite adicionar notificações em suas classes (entidade, objeto de valor, serviços, Dtos e etc)
+			
+			Vantagens
+			- Suporte em 2 idiomas
+			- Gera mensagens automáticas baseada na validação que deseja
 
-O foco deste framework é permitir que trabalhe com notificações ao invés de exceções, podendo assim transportar suas notificações de uma camada mais abaixo, até outras camadas mais acima.
+			O foco deste framework é permitir que trabalhe com notificações ao invés de exceções, podendo assim transportar suas notificações entre classes (entidades, serviços, repositorios e etc).
+
+			Suporte para mensagens padrão nos idiomas
+
+			- pt-BR
+			- en-US
 
 
-Suporte para mensagens padrão nos idiomas
+			Metodos de validação:
 
-- pt-BR
+			- IfRequired
 
-- en-US
+			- IfNullOrEmpty
 
+			- IfNullOrWhiteSpace
 
-Metodos de validação:
+			- IfNotNull
 
+			- IfLowerThen
 
-- IfNullOrEmpty
+			- IfGreaterThan
 
-- IfNullOrWhiteSpace
+			- IfLengthNoEqual
 
-- IfNotNull
+			- IfNotEmail
 
-- IfLowerThen
+			- IfNotUrl
 
-- IfGreaterThan
+			- IfGreaterOrEqualsThan
 
-- IfLengthNoEqual
+			- IfLowerOrEqualsThan
 
-- IfNotEmail
+			- IfNotRange
 
-- IfNotUrl
+			- IfRange
 
-- IfGreaterOrEqualsThan
+			- IfNotContains
 
-- IfLowerOrEqualsThan
+			- IfContains
 
-- IfNotRange
+			- IfNotAreEquals
 
-- IfRange
+			- IfAreEquals
 
-- IfNotContains
+			- IfTrue
 
-- IfContains
+			- IfFalse
 
-- IfNotAreEquals
+			- IfNotCpf
 
-- IfAreEquals
+			- IfNotCnpj
 
-- IfTrue
+			- IfNotGuid
 
-- IfFalse
+			- IfCollectionIsNull
 
-- IfNotCpf
+			- IfCollectionIsNullOrEmpty
 
-- IfNotCnpj
+			- IfEqualsZero
 
-- IfNotGuid
+			- IfNull
 
-- IfCollectionIsNull
+			- IfNotNull
 
-- IfCollectionIsNullOrEmpty
+			- IfNotNullOrEmpty
 
-- IfEqualsZero
+			- IfNotDate
 
-- IfNull
+			- IfNullOrOrInvalidLength
 
-- IfNotNull
+			- IfLengthGreaterThan
 
-- IfNotNullOrEmpty
-
-- IfNotDate
-
-- IfNullOrOrInvalidLength
-
-- IfLengthGreaterThan
-
-- IfLengthLowerThan</Description>
+			- IfLengthLowerThan</Description>
         <PackageIconUrl>http://0.gravatar.com/avatar/0b6442b3dc111885b6f0b54d6083e952?s=100&amp;d=mm&amp;r=g</PackageIconUrl>
         <PackageProjectUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</PackageProjectUrl>
         <RepositoryUrl>https://github.com/pauloanalista/prmToolkit.NotificationPattern</RepositoryUrl>

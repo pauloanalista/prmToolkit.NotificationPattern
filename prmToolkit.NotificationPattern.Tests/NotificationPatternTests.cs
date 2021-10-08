@@ -30,7 +30,21 @@ namespace prmToolkit.NotificationPattern.Tests
         {
             new AddNotifications<Customer>(_customer)
                 .IfNullOrWhiteSpace(x => x.Name)
-                .IfNullOrWhiteSpace("", "Vazio");
+                .IfNullOrWhiteSpace("", "Vazio")
+                ;
+
+            Assert.AreEqual(false, _customer.IsValid());
+            Assert.IsTrue(_customer.Notifications.Count() == 2);
+        }
+
+        [TestMethod]
+        [TestCategory("NotificationPattern")]
+        public void IfRequired()
+        {
+            new AddNotifications<Customer>(_customer)
+                .IfRequired(x => x.Name, 1,5)
+                .IfNullOrWhiteSpace("", "Vazio")
+                ;
 
             Assert.AreEqual(false, _customer.IsValid());
             Assert.IsTrue(_customer.Notifications.Count() == 2);
@@ -259,7 +273,7 @@ namespace prmToolkit.NotificationPattern.Tests
 
         [TestMethod]
         [TestCategory("NotificationPattern")]
-        public void IfRange_Date()
+        public void IfRangeDate()
         {
             DateTime now = DateTime.Now;
             _customer.CreationDate = now;

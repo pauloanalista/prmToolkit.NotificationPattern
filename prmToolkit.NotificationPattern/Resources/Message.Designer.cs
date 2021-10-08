@@ -20,7 +20,7 @@ namespace prmToolkit.NotificationPattern.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Message {
@@ -251,6 +251,15 @@ namespace prmToolkit.NotificationPattern.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O valor do campo {0} não é valido..
+        /// </summary>
+        public static string IfNotMatch {
+            get {
+                return ResourceManager.GetString("IfNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser igual a nulo..
         /// </summary>
         public static string IfNotNull {
@@ -332,21 +341,20 @@ namespace prmToolkit.NotificationPattern.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O campo {0} é obrigatório e deve conter entre {1} e {2} caracteres..
+        /// </summary>
+        public static string IfRequired {
+            get {
+                return ResourceManager.GetString("IfRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O campo {0} deve ser falso..
         /// </summary>
         public static string IfTrue {
             get {
                 return ResourceManager.GetString("IfTrue", resourceCulture);
-            }
-        }
-
-        
-        /// <summary>
-        ///   Looks up a localized string similar to O campo {0} deve ser falso..
-        /// </summary>
-        public static string IfNotMatch {
-            get {
-                return ResourceManager.GetString("IfNotMatch", resourceCulture);
             }
         }
     }

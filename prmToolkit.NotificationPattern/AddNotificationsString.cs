@@ -68,7 +68,7 @@ namespace prmToolkit.NotificationPattern
         /// <param name="selector">Nome da propriedade que deseja testar</param>
         /// <param name="message">Mensagem de erro (Opcional)</param>
         /// <returns>Dada uma string, adicione uma notificação se for nula ou vazia ou com espaços em branco ou seu tamanho seja invalido</returns>
-        [Obsolete("Método obsoleto, por favor utilize o método IfNullOrInvalidLength")]
+        [Obsolete("Método obsoleto, por favor utilize o método IfNullOrInvalidLength ou IfRequired")]
         public AddNotifications<T> IfNullOrEmptyOrInvalidLength(Expression<Func<T, string>> selector, int min, int max, string message = "")
         {
             var val = selector.Compile().Invoke(_notifiableObject);
@@ -93,6 +93,23 @@ namespace prmToolkit.NotificationPattern
 
             if (string.IsNullOrEmpty(val) || string.IsNullOrWhiteSpace(val) || val.Length < min || val.Length > max)
                 _notifiableObject.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfNullOrInvalidLength.ToFormat(name, min, max) : message);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Dada uma string, adicione uma notificação se for nula ou vazia ou com espaços em branco ou seu tamanho seja invalido
+        /// </summary>
+        /// <param name="selector">Nome da propriedade que deseja testar</param>
+        /// <param name="message">Mensagem de erro (Opcional)</param>
+        /// <returns>Dada uma string, adicione uma notificação se for nula ou vazia ou com espaços em branco ou seu tamanho seja invalido</returns>
+        public AddNotifications<T> IfRequired(Expression<Func<T, string>> selector, int min, int max, string message = "")
+        {
+            var val = selector.Compile().Invoke(_notifiableObject);
+            var name = ((MemberExpression)selector.Body).Member.Name;
+
+            if (string.IsNullOrEmpty(val) || string.IsNullOrWhiteSpace(val) || val.Length < min || val.Length > max)
+                _notifiableObject.AddNotification(name, string.IsNullOrEmpty(message) ? Message.IfRequired.ToFormat(name, min, max) : message);
 
             return this;
         }
@@ -507,6 +524,20 @@ namespace prmToolkit.NotificationPattern
             return this;
         }
 
+        /// <summary>
+        /// Dada uma string, adicione uma notificação se for nula ou vazia ou com espaços em branco ou seu tamanho seja invalido
+        /// </summary>
+        /// <param name="val">Valor informado</param>
+        /// <param name="objectName">Nome da propriedade ou objeto que representa a informação</param>
+        /// <param name="message">Mensagem de erro (Opcional)</param>
+        /// <returns>Dada uma string, adicione uma notificação se for nula ou vazia ou com espaços em branco ou seu tamanho seja invalido</returns>
+        public AddNotifications<T> IfRequired(string val, int min, int max, string objectName, string message = "")
+        {
+            if (string.IsNullOrEmpty(val) || string.IsNullOrWhiteSpace(val) || val.Length < min || val.Length > max)
+                _notifiableObject.AddNotification(objectName, string.IsNullOrEmpty(message) ? Message.IfRequired.ToFormat(objectName, min, max) : message);
+
+            return this;
+        }
 
         ///////////////////////////////////////
         /// <summary>

@@ -30,6 +30,25 @@ namespace prmToolkit.NotificationPattern
         /// </summary>
         /// <param name="objects">Objetos notificáveis</param>
         void AddNotifications(params Notifiable[] objects);
+
+        /// <summary>
+        /// Copia as notificações para a classe principal
+        /// </summary>
+        /// <param name="objects">Objetos notificáveis</param>
+        void CopyNotifications(params Notifiable[] objects);
+
+        /// <summary>
+        /// Adiciona notificações de coleções de coleção de objetos notificaveis na classe principal
+        /// </summary>
+        /// <param name="objects">Objetos notificáveis</param>
+        void AddNotifications(params IEnumerable<Notifiable>[] objects);
+
+        /// <summary>
+        /// Adiciona notificações de coleções de coleção de objetos notificaveis na classe principal
+        /// </summary>
+        /// <param name="objects">Objetos notificáveis</param>
+        void CopyNotifications(params IEnumerable<Notifiable>[] objects);
+
         /// <summary>
         /// Adiciona uma lista de notificações
         /// </summary>

@@ -213,4 +213,7 @@
   <data name="IfNotMatch" xml:space="preserve">
     <value>The value of field {0} is not valid.</value>
   </data>
+  <data name="IfRequired" xml:space="preserve">
+    <value>The field {0} is required and must contain between {1} and {2} characters.</value>
+  </data>
 </root>

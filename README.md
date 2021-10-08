@@ -26,7 +26,7 @@ Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
 ```
 
 #### Trabalhando com classes
-```sh
+```csharp
 //Crie uma classe que herde de Notifiable para que seja notificavél
 public class Customer : Notifiable
 {
@@ -66,7 +66,7 @@ Também é possível obter as notificações de uma classe filha para uma classe
 
 É o mesmo conceito da Exception, sendo que para ela chegar no topo é necessário fazer uso do método AddNotifications.
 
-```sh
+```csharp
 public class Pedido : Notifiable
 {
     public void AddItem(ItemDoPedido item)
@@ -96,7 +96,7 @@ public class Pedido : Notifiable
 
 ##### É possível adicionar notificações manualmente
 
-```sh
+```csharp
 public bool AutenticarUsuario(string username, string password)
 {
     if (Username == username && Password == EncryptPassword(password))
@@ -113,7 +113,7 @@ Cada método abaixo já possui sua mensagem padrão no idioma inglês ou portugu
 
 ##### Sem mensagem personalizada
 
-```sh
+```csharp
 //É possível passar mensagens personalizadas também
 public void Metodo_Sem_Mensagem_Personalizada()
 {
@@ -131,7 +131,7 @@ public void Metodo_Sem_Mensagem_Personalizada()
 ##### Com mensagem personalizada
 Caso tenha interesse em personalizar a mensagem, basta passar um parametro a mais, como podemos ver abaixo:
 
-```sh
+```csharp
 //É possível passar mensagens personalizadas também
 public void Metodo_Com_Mensagem_Personalizada()
 {
@@ -145,7 +145,7 @@ public void Metodo_Com_Mensagem_Personalizada()
 
 Também é possível passar uma mensagem personalizada através de um resource interno de sua aplicação.
 
-```sh
+```csharp
 public AdicionarResponse Adicionar(AdicionarRequest request)
 {
     if (request == null)

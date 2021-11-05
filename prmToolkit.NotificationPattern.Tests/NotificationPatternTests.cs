@@ -400,7 +400,9 @@ namespace prmToolkit.NotificationPattern.Tests
         {
             _customer.Age = 0;
 
-            new AddNotifications<Customer>(_customer).IfEqualsZero(x => x.Age);
+            new AddNotifications<Customer>(_customer)
+                .IfEqualsZero(x => x.Age)
+                .IfEqualsZero(x => x.Altura);
 
             Assert.AreEqual(false, _customer.IsValid());
         }
@@ -498,6 +500,7 @@ namespace prmToolkit.NotificationPattern.Tests
         public string Name { get; set; }
 
         public int Age { get; set; }
+        public double Altura { get; set; }
 
         public DateTime CreationDate { get; set; }
 

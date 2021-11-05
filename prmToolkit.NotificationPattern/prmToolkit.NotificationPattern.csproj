@@ -4,7 +4,7 @@
         <TargetFramework>netstandard1.0</TargetFramework>
         <RootNamespace>prmToolkit.NotificationPattern</RootNamespace>
         <AssemblyName>prmToolkit.NotificationPattern</AssemblyName>
-        <Version>1.1.4</Version>
+        <Version>1.1.5</Version>
         <Authors>paulorogerio</Authors>
         <Company>Paulo Rogério Martins Marques</Company>
         <Product>product</Product>

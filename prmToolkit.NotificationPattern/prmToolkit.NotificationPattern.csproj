@@ -4,7 +4,7 @@
         <TargetFramework>netstandard1.0</TargetFramework>
         <RootNamespace>prmToolkit.NotificationPattern</RootNamespace>
         <AssemblyName>prmToolkit.NotificationPattern</AssemblyName>
-        <Version>1.1.5</Version>
+        <Version>1.1.6</Version>
         <Authors>paulorogerio</Authors>
         <Company>Paulo Rogério Martins Marques</Company>
         <Product>product</Product>
@@ -94,6 +94,7 @@
         <PackageTags>notification pattern fluent validation valid prmToolkit webapi paulorogerio</PackageTags>
         <PackageReleaseNotes>IfEqualsZero ganhou suporte ao tipo decimal e float
 </PackageReleaseNotes>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
